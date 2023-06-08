@@ -37,7 +37,7 @@ export default function TabContainer() {
           </div>
         </div>
         <div className="content__container">
-            <div class="content">
+            <div className="content">
               {/* session 2 */}
               {tab === 'Flip Coin' && <FlipCoin />}
             </div>
