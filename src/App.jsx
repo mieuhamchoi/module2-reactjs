@@ -6,6 +6,8 @@ import { useState, useTransition } from 'react';
 //..session 2
 import FlipCoin from "./pages/session2/FlipCoins/FlipCoin";
 import SearchProduct from "./pages/session2/SearchProducts/SearchProduct";
+//..session 3
+import LifeCycle from "./pages/session3/LifeCycle";
 
 //.........................components
 import Navbar from './components/Navbar'
@@ -18,7 +20,7 @@ export default function TabContainer() {
     },
     {
       sessionNumber: 3,
-      sessionHomeWork: ['Updating..']
+      sessionHomeWork: ['Lifecycle']
     }
   ]
   const [isPending, startTransition] = useTransition();
@@ -43,6 +45,7 @@ export default function TabContainer() {
               {/* session 2 */}
               {tab === 'Flip Coin' && <FlipCoin />}
               {tab === 'Search Product' && <SearchProduct />}
+              {tab === 'Lifecycle' && <LifeCycle />}
             </div>
         </div>
       </div>
