@@ -18,9 +18,9 @@ export default class LifeCycle extends Component {
         console.log("Chạy khi component con nhận props từ component cha. Sau khi nhận được props mới component con có thể set lại state")
     }
 
-    shouldComponentUpdate() {
-        console.log(" Hàm này giúp tăng hiệu năng của React lên. Nếu như return false thì các phương thực componentWillUpdate, render, componentDidUpdate sẽ không được chạy nữa")
-    }
+    // shouldComponentUpdate() {
+    //     console.log(" Hàm này giúp tăng hiệu năng của React lên. Nếu như return false thì các phương thực componentWillUpdate, render, componentDidUpdate sẽ không được chạy nữa")
+    // }
 
     componentWillUpdate() {
         console.log("Hàm này cũng giống như hàm componentWillMount() trước khi re-render ra Component")

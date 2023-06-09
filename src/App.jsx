@@ -1,5 +1,5 @@
 import './App.scss'; // link css
-
+import 'bootstrap/dist/css/bootstrap.min.css'; // css react boostrap
 import { useState, useTransition } from 'react';
 
 //.........................pages
@@ -8,7 +8,7 @@ import FlipCoin from "./pages/session2/FlipCoins/FlipCoin";
 import SearchProduct from "./pages/session2/SearchProducts/SearchProduct";
 //..session 3
 import LifeCycle from "./pages/session3/LifeCycle";
-
+import Form from "./pages/session3/Forms/Form";
 //.........................components
 import Navbar from './components/Navbar'
 
@@ -20,7 +20,7 @@ export default function TabContainer() {
     },
     {
       sessionNumber: 3,
-      sessionHomeWork: ['Lifecycle']
+      sessionHomeWork: ['Lifecycle', 'Forms']
     }
   ]
   const [isPending, startTransition] = useTransition();
@@ -46,6 +46,7 @@ export default function TabContainer() {
               {tab === 'Flip Coin' && <FlipCoin />}
               {tab === 'Search Product' && <SearchProduct />}
               {tab === 'Lifecycle' && <LifeCycle />}
+              {tab === 'Forms' && <Form />}
             </div>
         </div>
       </div>
