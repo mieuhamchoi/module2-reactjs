@@ -5,6 +5,8 @@ import { useState, useTransition } from 'react';
 //.........................pages
 //..session 2
 import FlipCoin from "./pages/session2/FlipCoins/FlipCoin";
+import SearchProduct from "./pages/session2/SearchProducts/SearchProduct";
+
 //.........................components
 import Navbar from './components/Navbar'
 
@@ -12,7 +14,7 @@ export default function TabContainer() {
   const listTab = [
     {
       sessionNumber: 2,
-      sessionHomeWork: ['Flip Coin', 'Roll Dice', 'Đồng Hồ']
+      sessionHomeWork: ['Flip Coin', 'Search Product']
     },
     {
       sessionNumber: 3,
@@ -40,6 +42,7 @@ export default function TabContainer() {
             <div className="content">
               {/* session 2 */}
               {tab === 'Flip Coin' && <FlipCoin />}
+              {tab === 'Search Product' && <SearchProduct />}
             </div>
         </div>
       </div>
