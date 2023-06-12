@@ -14,7 +14,7 @@ export default function Parent() {
     
   return (
     <>
-        <div>Parent</div>
+        <h1>Parent</h1>
         <ParentContext.Provider  value={{ notes, addNote, number,  setNumber}}>
         <Child name="Toàn"></Child>
         </ParentContext.Provider>
