@@ -59,14 +59,14 @@ export default function ReactHooks() {
                 }}
             />
         </div>
-        <button onClick={() => {
-            let kq = [...studentList]
-            kq.push({
-                name: name,
-                age: age
-            })
-            setStudentList(kq)
-        }} type="button" className="btn btn-primary">Thêm</button>
+        <button 
+            onClick={() => {
+                setStudentList(prevStudentList => prevStudentList.concat({
+                    name: name,
+                    age: age
+                }));
+            }} 
+        type="button" className="btn btn-primary">Thêm</button>
         <Student studentList={studentList}></Student>
 
     </>
