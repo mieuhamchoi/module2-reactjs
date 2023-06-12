@@ -9,6 +9,8 @@ import SearchProduct from "./pages/session2/SearchProducts/SearchProduct";
 //..session 3
 import LifeCycle from "./pages/session3/LifeCycle";
 import Form from "./pages/session3/Forms/Form";
+//..session 4
+import ReactHooks from "./pages/session4/ReactHooks/ReactHooks";
 //.........................components
 import Navbar from './components/Navbar'
 
@@ -21,6 +23,10 @@ export default function TabContainer() {
     {
       sessionNumber: 3,
       sessionHomeWork: ['Lifecycle', 'Forms']
+    },
+    {
+      sessionNumber: 4,
+      sessionHomeWork: ['React Hook']
     }
   ]
   const [isPending, startTransition] = useTransition();
@@ -47,6 +53,7 @@ export default function TabContainer() {
               {tab === 'Search Product' && <SearchProduct />}
               {tab === 'Lifecycle' && <LifeCycle />}
               {tab === 'Forms' && <Form />}
+              {tab === 'React Hook' && <ReactHooks />}
             </div>
         </div>
       </div>
