@@ -10,7 +10,10 @@ import SearchProduct from "./pages/session2/SearchProducts/SearchProduct";
 import LifeCycle from "./pages/session3/LifeCycle";
 import Form from "./pages/session3/Forms/Form";
 //..session 4
-import ReactHooks from "./pages/session4/ReactHooks/ReactHooks";
+import UseState from "./pages/session4/UseState";
+import UseEffect from "./pages/session4/UseEffect"
+import UseReducer from "./pages/session4/UseReducer"
+import Parent from './pages/session4/UseContexts/Parent'
 //.........................components
 import Navbar from './components/Navbar'
 
@@ -26,11 +29,11 @@ export default function TabContainer() {
     },
     {
       sessionNumber: 4,
-      sessionHomeWork: ['React Hook']
+      sessionHomeWork: ['UseState', 'UseEffect', 'UseReducer', 'UseContext']
     }
   ]
   const [isPending, startTransition] = useTransition();
-  const [tab, setTab] = useState('FlipCoin');
+  const [tab, setTab] = useState('FlipCoin'); 
 
   function selectTab(nextTab) {
     startTransition(() => {
@@ -53,7 +56,10 @@ export default function TabContainer() {
               {tab === 'Search Product' && <SearchProduct />}
               {tab === 'Lifecycle' && <LifeCycle />}
               {tab === 'Forms' && <Form />}
-              {tab === 'React Hook' && <ReactHooks />}
+              {tab === 'UseState' && <UseState />}
+              {tab === 'UseEffect' && <UseEffect />}
+              {tab === 'UseReducer' && <UseReducer />}
+              {tab === 'UseContext' && <Parent />}
             </div>
         </div>
       </div>

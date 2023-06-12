@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import Student from "../../../components/Student";
-export default function ReactHooks() {
-    // 1. useState 
+import Student from "../../components/Student";
+export default function UseState() {
     const [numberOne, setNumberOne] = useState(0);
     const [studentList, setStudentList] = useState([
         {
@@ -21,7 +20,6 @@ export default function ReactHooks() {
     const [age, setAge] = useState(0)
   return (
     <>  
-        {/* Use State */}
         <h1>Use State Count Number</h1>
         <div>useState: {numberOne}</div>
         <button onClick={() => {
@@ -68,7 +66,6 @@ export default function ReactHooks() {
             }} 
         type="button" className="btn btn-primary">Thêm</button>
         <Student studentList={studentList}></Student>
-
     </>
   )
 }

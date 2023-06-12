@@ -12,8 +12,8 @@ export default function Student(props) {
         </thead>
         <tbody>
             {
-                props.studentList.map((student) => 
-                    <tr>
+                props.studentList.map((student, index) => 
+                    <tr key={student.name + student.age + index}>
                         <th scope="row">1</th>
                         <td>{student.name}</td>
                         <td>{student.age}</td>
