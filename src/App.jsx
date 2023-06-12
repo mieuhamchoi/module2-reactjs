@@ -14,6 +14,7 @@ import UseState from "./pages/session4/UseState";
 import UseEffect from "./pages/session4/UseEffect"
 import UseReducer from "./pages/session4/UseReducer"
 import Parent from './pages/session4/UseContexts/Parent'
+import UseRef from './pages/session4/UseRef'
 //.........................components
 import Navbar from './components/Navbar'
 
@@ -29,7 +30,7 @@ export default function TabContainer() {
     },
     {
       sessionNumber: 4,
-      sessionHomeWork: ['UseState', 'UseEffect', 'UseReducer', 'UseContext']
+      sessionHomeWork: ['UseState', 'UseEffect', 'UseReducer', 'UseContext', 'UseRef']
     }
   ]
   const [isPending, startTransition] = useTransition();
@@ -60,6 +61,7 @@ export default function TabContainer() {
               {tab === 'UseEffect' && <UseEffect />}
               {tab === 'UseReducer' && <UseReducer />}
               {tab === 'UseContext' && <Parent />}
+              {tab === 'UseRef' && <UseRef />}
             </div>
         </div>
       </div>
