@@ -1,0 +1,18 @@
+.ourProduct__container {
+    width: 100%;
+    font-size: 15px;
+    .titles {
+        font-size: 1em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .titles--text {
+            font-size: 2em;
+            font-weight: 900;
+        }
+        .sologan--text {
+            font-size: 1em;
+        }
+    }
+}

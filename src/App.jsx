@@ -1,4 +1,5 @@
 import './App.scss'; // link css
+import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css'; // css react boostrap
 import { useState, useTransition } from 'react';
 
@@ -17,6 +18,8 @@ import Parent from './pages/session4/UseContexts/Parent'
 import UseRef from './pages/session4/UseRef'
 import UseMemo from './pages/session4/UseMemo'
 import UseCallback from './pages/session4/UseCallback'
+//..session 5
+import MeoMeo from "./pages/session5/meomeos/MeoMeo";
 //.........................components
 import Navbar from './components/Navbar'
 
@@ -33,6 +36,10 @@ export default function TabContainer() {
     {
       sessionNumber: 4,
       sessionHomeWork: ['UseState', 'UseEffect', 'UseReducer', 'UseContext', 'UseRef', 'UseMemo', 'UseCallback']
+    },
+    {
+      sessionNumber: 5,
+      sessionHomeWork: ['MeoMeo']
     }
   ]
   const [isPending, startTransition] = useTransition();
@@ -66,6 +73,7 @@ export default function TabContainer() {
               {tab === 'UseRef' && <UseRef />}
               {tab === 'UseMemo' && <UseMemo />}
               {tab === 'UseCallback' && <UseCallback />}
+              {tab === 'MeoMeo' && <MeoMeo />}
             </div>
         </div>
       </div>

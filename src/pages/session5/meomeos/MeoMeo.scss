@@ -1,0 +1,90 @@
+$navbar_height: 60px;
+@import url('https://fonts.googleapis.com/css2?family=Kablammo&display=swap');
+.meomeo__container {
+    width: 100%;
+    min-height: 100vh;
+    font-size: 15px;
+    box-sizing: border-box;
+    .navbar {
+        width: 100%;
+        height: $navbar_height;
+        background-color: #f8ac6d;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .menu-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 3em;
+            height: 3em;
+            cursor: pointer;
+            transition: all 0.5 ease-in-out;
+            font-size: 1em;
+            .menu-btn__burger {
+                width: 1.8em;
+                height: 0.3em;
+                background: #f5f4f4;
+                border-radius: 0.5em;
+                box-shadow: 0 2px 5px rgba(255,101,42,0.2);
+                transition: all 0.2s ease-in-out;
+                &::before, &::after {
+                    content: "";
+                    position: absolute;
+                    width: 1.8em;
+                    height: 0.3em;
+                    background: #f5f4f4;
+                    border-radius: 0.5em;
+                    box-shadow: 0 2px 5px rgba(255,101,42,0.2);
+                    transition: all 0.2s ease-in-out;
+                }
+                &::before {
+                    transform: translateY(-0.5em);
+                }
+                &::after {
+                    transform: translateY(0.5em);
+                }
+            }
+            &.open {
+                .menu-btn__burger {
+                    transform: translateX(-50px);
+                    background: transparent;
+                    box-shadow: none;
+                }
+                .menu-btn__burger {
+                    &::before {
+                        transform: rotate(45deg) translate(35px, -35px);
+                    }
+                    &::after {
+                        transform: rotate(-45deg) translate(35px, 35px);
+                    }
+                }
+            }
+        }
+        .title {
+            font-size: 2em;
+            color: #938F8B;
+            font-weight: 900;
+            font-family: 'Kablammo', cursive;
+            cursor: pointer;
+            user-select: none;
+        }
+        .user_tools {
+            display: flex;
+            align-items: center;
+            font-size: 1.5em;
+            .tool {
+                cursor: pointer;
+            }
+            .tools_user {
+
+            }
+            .tools_cart {
+                margin: 0 0.5em;
+            }
+            .tools_search {
+
+            }
+        }
+    }
+}
