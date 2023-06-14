@@ -6,7 +6,7 @@ export default function TaskTable(props) {
     const [date, setDate] = useState(null);
     const [status, setStatus] = useState(null);
     const [targetName, setTargetName] = useState(null);
-
+    
     const [isEdit, setIsEdit] = useState(false)
   return (
     <div className='taskTable'>
@@ -46,7 +46,8 @@ export default function TaskTable(props) {
                                     }} type="button" className="btn btn-danger">Delete</button>
                                 </td>
                             </tr>
-                            :                            
+                            :   
+                            taskId == task.taskId ?                         
                              <tr key={task.taskName + task.taskId}>
                                 <th scope="row">{index + 1}</th>
                                 <td>
@@ -103,6 +104,26 @@ export default function TaskTable(props) {
                                     }} style={{marginRight: "10px"}} type="button" className="btn btn-success">Save</button>
                                 </td>
                             </tr>
+                            :                             <tr key={task.taskName + index}>
+                            <th scope="row">{index + 1}</th>
+                            <td>{task.taskName}</td>
+                            <td>{task.date}</td>
+                            <td>{task.status}</td>
+                            <td>{task.targetName}</td>
+                            <td>
+                                <button onClick={() => {
+                                    setIsEdit(!isEdit)
+                                    setTaskId(task.taskId)
+                                    setTaskName(task.taskName)
+                                    setDate(task.date)
+                                    setStatus(task.status)
+                                    setTargetName(task.targetName)
+                                }} style={{marginRight: "10px"}} type="button" className="btn btn-success">Update</button>
+                                <button onClick={() => {
+                                    props.handleDeleteTask({ type: 'deleteTask', taskId: task.taskId });
+                                }} type="button" className="btn btn-danger">Delete</button>
+                            </td>
+                        </tr>
                         
                     )
                 }
