@@ -15,6 +15,13 @@ export default function TaskKeeper() {
             case 'deleteTask':
                 const updatedState = state.filter(task => task.taskId !== action.taskId);
                 return updatedState;
+            case 'updateTask':
+                return state.map(task => {
+                    if (task.taskId === action.taskUpdate.taskId) {
+                        return action.taskUpdate;
+                    }
+                    return task;
+                });
             default:
                 throw new Error();
         }
@@ -30,7 +37,7 @@ export default function TaskKeeper() {
         <div className='taskKeeper__container'>
             <div className='contents'>
                 <NewTaskForm handleAddTask={dispatch}></NewTaskForm>
-                <TaskTable handleDeleteTask={dispatch} taskList={state}></TaskTable>
+                <TaskTable handleUpdateTask={dispatch} handleDeleteTask={dispatch} taskList={state}></TaskTable>
             </div>
         </div>
     </>

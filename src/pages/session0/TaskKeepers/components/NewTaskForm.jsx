@@ -54,7 +54,7 @@ export default function NewTaskForm(props) {
         <select value={status} onChange={(e) => {
             setStatus(e.target.value)
         }}  className="form-select" aria-label="Default select example">
-            <option value="Choose" selected>Choose</option>
+            <option value="Choose">Choose</option>
             <option value="Pending">Pending</option>
             <option value="Pullfill">Pullfill</option>
             <option value="Reject">Reject</option>
