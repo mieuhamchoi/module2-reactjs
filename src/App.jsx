@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'; // css react boostrap
 import { useState, useTransition } from 'react';
 
 //.........................pages
+import TaskKeeper from './pages/session0/TaskKeepers/TaskKeeper'
 //..session 2
 import FlipCoin from "./pages/session2/FlipCoins/FlipCoin";
 import SearchProduct from "./pages/session2/SearchProducts/SearchProduct";
@@ -25,6 +26,10 @@ import Navbar from './components/Navbar'
 
 export default function TabContainer() {
   const listTab = [
+    {
+      sessionNumber: 0,
+      sessionHomeWork: ['TaskKeeper']
+    },
     {
       sessionNumber: 2,
       sessionHomeWork: ['Flip Coin', 'Search Product']
@@ -74,6 +79,7 @@ export default function TabContainer() {
               {tab === 'UseMemo' && <UseMemo />}
               {tab === 'UseCallback' && <UseCallback />}
               {tab === 'MeoMeo' && <MeoMeo />}
+              {tab === 'TaskKeeper' && <TaskKeeper />}
             </div>
         </div>
       </div>

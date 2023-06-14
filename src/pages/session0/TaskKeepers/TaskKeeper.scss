@@ -1,0 +1,21 @@
+.taskKeeper__container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .contents {
+        width: 1024px;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        .newTaskFrom {
+            max-width: 300px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .taskTable {
+            margin-top: 1em;
+        }
+    }
+}
