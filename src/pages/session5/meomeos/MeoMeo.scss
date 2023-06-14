@@ -12,6 +12,7 @@ $navbar_height: 60px;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        padding: 0 10px;
         .menu-btn {
             display: flex;
             justify-content: center;
@@ -68,6 +69,9 @@ $navbar_height: 60px;
             font-family: 'Kablammo', cursive;
             cursor: pointer;
             user-select: none;
+            &:hover {
+                color: pink;
+            }
         }
         .user_tools {
             display: flex;
@@ -77,13 +81,20 @@ $navbar_height: 60px;
                 cursor: pointer;
             }
             .tools_user {
-
+                &:hover {
+                    color: white;
+                }
             }
             .tools_cart {
                 margin: 0 0.5em;
+                &:hover {
+                    color: white;
+                }
             }
             .tools_search {
-
+                &:hover {
+                    color: white;
+                }
             }
         }
     }
