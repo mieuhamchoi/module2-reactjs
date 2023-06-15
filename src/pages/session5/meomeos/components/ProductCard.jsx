@@ -1,6 +1,10 @@
-import React from 'react'
-import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
-import { Avatar, Card } from 'antd';
+import React from "react";
+import {
+  EditOutlined,
+  EllipsisOutlined,
+  SettingOutlined,
+} from "@ant-design/icons";
+import { Avatar, Card } from "antd";
 
 const { Meta } = Card;
 export default function ProductCard() {
@@ -20,10 +24,12 @@ export default function ProductCard() {
       ]}
     >
       <Meta
-        avatar={<Avatar src="https://xsgames.co/randomusers/avatar.php?g=pixel" />}
+        avatar={
+          <Avatar src="https://xsgames.co/randomusers/avatar.php?g=pixel" />
+        }
         title="Card title"
         description="This is the description"
       />
     </Card>
-  )
+  );
 }

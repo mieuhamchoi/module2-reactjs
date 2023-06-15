@@ -1,22 +1,21 @@
 .searchProduct__containeer {
-    width: 100%;
+  width: 100%;
 
-    .title {
-        text-align: center;
-    }
-    .item {
-        display: flex;
-        height: 100px;
-        align-items: center;
-        justify-content: center;
-    }
-    .product--img {
-        
-        width: auto;
-        height: 100px;
-    }
+  .title {
+    text-align: center;
+  }
+  .item {
+    display: flex;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+  }
+  .product--img {
+    width: auto;
+    height: 100px;
+  }
 
-    .search__container {
-        width: 300px;
-    }
+  .search__container {
+    width: 300px;
+  }
 }

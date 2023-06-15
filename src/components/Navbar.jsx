@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 export default function Navbar(props) {
   return (
@@ -20,35 +20,33 @@ export default function Navbar(props) {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            {
-              props.listTab.map((session) => 
-                <li key={session.sessionNumber} className="nav-item dropdown">
-                  <a
-                    className="nav-link dropdown-toggle"
-                    href="#"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                    onClick={() => {
-    
-                    }}
-                  >
-                    Session {session.sessionNumber}
-                  </a>
-                  <ul className="dropdown-menu">
-                    {
-                      session.sessionHomeWork.map((homeWork, index) => 
-                        <li key={session.sessionNumber + index}>
-                          <a onClick={() => props.selectTab(homeWork)} className="dropdown-item" href="#">
-                            {homeWork}
-                          </a>
-                        </li>
-                      )
-                    }
-                  </ul>
-                </li>
-              )
-            }
+            {props.listTab.map((session) => (
+              <li key={session.sessionNumber} className="nav-item dropdown">
+                <a
+                  className="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  onClick={() => {}}
+                >
+                  Session {session.sessionNumber}
+                </a>
+                <ul className="dropdown-menu">
+                  {session.sessionHomeWork.map((homeWork, index) => (
+                    <li key={session.sessionNumber + index}>
+                      <a
+                        onClick={() => props.selectTab(homeWork)}
+                        className="dropdown-item"
+                        href="#"
+                      >
+                        {homeWork}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
           </ul>
           <form className="d-flex" role="search">
             <input
@@ -64,5 +62,5 @@ export default function Navbar(props) {
         </div>
       </div>
     </nav>
-  )
+  );
 }

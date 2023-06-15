@@ -1,38 +1,31 @@
-
 .flipCoin__container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  .coin {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transition: transform 0.25s;
+    .side {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+    }
+
+    .front {
+      background-image: url("../../../../public/images/tien1.jpg");
+    }
+
+    .back {
+      background-image: url("../../../../public/images/tien2.jpg");
+      transform: rotateY(180deg);
+    }
+  }
+  .flipCoin__tools {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    background-color: white;
-    .coin {
-        position: relative;
-        width: 300px;
-        height: 300px;
-        transform-style: preserve-3d;
-        transition: transform 0.25s;
-        .side {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-        }
-
-        .front {
-            background-image: url("../../../../public/images/tien1.jpg");
-        }
-            
-        .back {
-            background-image: url("../../../../public/images/tien2.jpg");
-            transform: rotateY(180deg);
-        }
-    }
-    .flipCoin__tools {
-        width: 100%;
-    }
+  }
 }
-
-  
-
-  
-
-  

@@ -1,16 +1,16 @@
-import React, { useState, useCallback, useMemo } from 'react';
+import React, { useState, useCallback, useMemo } from "react";
 
 export default function UseCallback() {
   const [count, setCount] = useState(0);
   const [number, setNumber] = useState(1);
 
   const handleClickCount = useCallback(() => {
-    console.log("count",count)
+    console.log("count", count);
     setCount(count + 1);
   }, []);
 
   const handleClickNumber = () => {
-    console.log("number",number)
+    console.log("number", number);
     setNumber(number + 1);
   };
 
