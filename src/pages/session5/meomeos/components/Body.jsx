@@ -28,6 +28,7 @@ export default function Body() {
     <>
       <Carousel
         ref={slider}
+        autoplay
         autoplaySpeed={1000}
         effect={"fade"}
         dots={true}
@@ -40,14 +41,6 @@ export default function Body() {
           </div>
         ))}
       </Carousel>
-      <button
-        onClick={() => {
-          console.log("slider", slider);
-          slider.current.next();
-        }}
-      >
-        Next
-      </button>
       <OurProducts></OurProducts>
     </>
   );
