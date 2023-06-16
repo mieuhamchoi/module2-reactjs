@@ -5,6 +5,7 @@ import { useState, useTransition } from "react";
 
 //.........................pages
 import TaskKeeper from "./pages/session0/TaskKeepers/TaskKeeper";
+import LearnUseReducer from './pages/session0/learnUseReducers/LearnUseReducer'
 //..session 2
 import FlipCoin from "./pages/session2/FlipCoins/FlipCoin";
 import SearchProduct from "./pages/session2/SearchProducts/SearchProduct";
@@ -28,7 +29,7 @@ export default function TabContainer() {
   const listTab = [
     {
       sessionNumber: 0,
-      sessionHomeWork: ["TaskKeeper"],
+      sessionHomeWork: ["TaskKeeper", "LearnUseReducer"],
     },
     {
       sessionNumber: 2,
@@ -92,6 +93,7 @@ export default function TabContainer() {
             {tab === "UseCallback" && <UseCallback />}
             {tab === "MeoMeo" && <MeoMeo />}
             {tab === "TaskKeeper" && <TaskKeeper />}
+            {tab === "LearnUseReducer" && <LearnUseReducer />}
           </div>
         </div>
       </div>
