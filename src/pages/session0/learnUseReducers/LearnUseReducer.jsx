@@ -8,7 +8,6 @@ export default function LearnUseReducer() {
     => Ví dụ minh họa thư viện react js xem trong examples/reactFake.js
 
   */
-
         // Khởi tạo state ban đầu
     const initialState = { count: 0 };
 
