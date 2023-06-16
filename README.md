@@ -17,7 +17,7 @@ Node JS 14+
 
 Npm 5.6+
 
-## Setup
+## Setup and Run project
 
 Follow on the steps:
 
