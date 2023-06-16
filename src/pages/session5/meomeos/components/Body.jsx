@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Carousel } from "antd";
 import "./Body.scss";
 import OurProducts from "./OurProducts";
 
 export default function Body() {
+  const slider = useRef();
   const [banners, setBanners] = useState([
     {
       id: 1,
@@ -22,15 +23,31 @@ export default function Body() {
       url: "https://tapchicongthuong.vn/images/23/2/21/my-pham-a.jpg",
     },
   ]);
+
   return (
     <>
-      <Carousel autoplay>
+      <Carousel
+        ref={slider}
+        autoplaySpeed={1000}
+        effect={"fade"}
+        dots={true}
+        dotPosition={"top"}
+        waitForAnimate={"true"}
+      >
         {banners.map((banner, index) => (
           <div className="items" key={banner.id + index}>
             <img className="items-img" src={banner.url} />
           </div>
         ))}
       </Carousel>
+      <button
+        onClick={() => {
+          console.log("slider", slider);
+          slider.current.next();
+        }}
+      >
+        Next
+      </button>
       <OurProducts></OurProducts>
     </>
   );
