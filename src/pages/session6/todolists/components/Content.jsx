@@ -89,6 +89,7 @@ export default function Content() {
                 </div>
               </li>
             ))}
+            {state.length == 0 ? <>Bạn chưa có kế hoạch nào</> : <></>}
         </ul>
       </div>
     </div>
