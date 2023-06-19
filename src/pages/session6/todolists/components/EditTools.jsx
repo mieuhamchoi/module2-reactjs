@@ -1,13 +1,12 @@
 import React, { useState, useContext, useEffect } from "react";
 
 // import context được provider
-import {toDolistContext} from "../Todolist";
+import { toDolistContext } from "../Todolist";
 
-
+import { Modal } from "antd";
 export default function EditTools() {
-
-  // dùng useContext để đọc context 
-  const {state, dispatch, isEditForm} = useContext(toDolistContext);
+  // dùng useContext để đọc context
+  const { state, dispatch, isEditForm } = useContext(toDolistContext);
 
   function uuidv4() {
     return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
@@ -18,7 +17,7 @@ export default function EditTools() {
     );
   }
 
-  const [doListName, setDoListName] = useState('');
+  const [doListName, setDoListName] = useState("");
   const [doListNameUpdate, setDoListNameUpdate] = useState("");
 
   useEffect(() => {
@@ -43,7 +42,7 @@ export default function EditTools() {
             placeholder="Thêm công việc"
             value={doListName}
             onChange={(e) => {
-              setDoListName(e.target.value)
+              setDoListName(e.target.value);
             }}
           />
           <button
@@ -52,15 +51,25 @@ export default function EditTools() {
                                     ms-2"
             onClick={(e) => {
               e.preventDefault();
-              dispatch({
-                type: "addNewDoList",
-                newDoList: {
-                  id: uuidv4(),
-                  des: doListName,
-                  did: false,
+              Modal.confirm({
+                title: "Xác nhận",
+                content: "Bạn xác nhận thêm mới?",
+                onOk() {
+                  // Xử lý khi người dùng xác nhận
+                  dispatch({
+                    type: "addNewDoList",
+                    newDoList: {
+                      id: uuidv4(),
+                      des: doListName,
+                      did: false,
+                    },
+                  });
+                  setDoListName("");
+                },
+                onCancel() {
+                  // Xử lý khi người dùng hủy bỏ
                 },
               });
-              setDoListName("");
             }}
           >
             Thêm
@@ -78,20 +87,31 @@ export default function EditTools() {
             placeholder="Thêm công việc"
             value={doListNameUpdate}
             onChange={(e) => {
-              setDoListNameUpdate(e.target.value)
+              setDoListNameUpdate(e.target.value);
             }}
           />
           <button
             type="submit"
             className="btn btn-info
                                     ms-2"
-            onClick={() => {
-              dispatch({
-                type: "updateDoList",
-                doListUpdate: {
-                  id: isEditForm.doListUpdate.id,
-                  des: doListNameUpdate,
-                  did: false,
+            onClick={(e) => {
+              e.preventDefault();
+              Modal.confirm({
+                title: "Xác nhận",
+                content: "Bạn xác nhận cập nhật?",
+                onOk() {
+                  // Xử lý khi người dùng xác nhận
+                  dispatch({
+                    type: "updateDoList",
+                    doListUpdate: {
+                      id: isEditForm.doListUpdate.id,
+                      des: doListNameUpdate,
+                      did: false,
+                    },
+                  });
+                },
+                onCancel() {
+                  // Xử lý khi người dùng hủy bỏ
                 },
               });
             }}

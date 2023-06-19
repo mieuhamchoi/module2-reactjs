@@ -9,20 +9,16 @@ export const toDolistContext = createContext();
 
 export default function Todolist() {
   // tạo state nhanh để quản lý trạng thái edit
-  const [isEditForm, setIsEditForm] = useState(
-    {
-      status: false,
-      doListUpdate: null
-    }
-  );
+  const [isEditForm, setIsEditForm] = useState({
+    status: false,
+    doListUpdate: null,
+  });
 
   function setDataEdit(status, doList) {
-    setIsEditForm(
-      {
-        status: status,
-        doListUpdate: doList
-      }
-    )
+    setIsEditForm({
+      status: status,
+      doListUpdate: doList,
+    });
   }
   // khởi tạo state
   const initStateToDoList = [
@@ -44,12 +40,10 @@ export default function Todolist() {
       case "addNewDoList":
         return [action.newDoList, ...state];
       case "updateDoList":
-        setIsEditForm(
-          {
-            status: false,
-            doListUpdate: null
-          }
-        )
+        setIsEditForm({
+          status: false,
+          doListUpdate: null,
+        });
         return state.map((doList) => {
           if (doList.id === action.doListUpdate.id) {
             return action.doListUpdate;
@@ -57,9 +51,7 @@ export default function Todolist() {
           return doList;
         });
       case "deleteDoList":
-        const updatedState = state.filter(
-          (doList) => doList.id !== action.id
-        );
+        const updatedState = state.filter((doList) => doList.id !== action.id);
         return updatedState;
       default:
         throw new Error();
@@ -69,10 +61,10 @@ export default function Todolist() {
   // tạo ra state và dispatch dùng useReducer
   const [state, dispatch] = useReducer(reducerTodolist, initStateToDoList);
 
-
-
   return (
-    <toDolistContext.Provider value={{state, dispatch, isEditForm, setDataEdit}}>
+    <toDolistContext.Provider
+      value={{ state, dispatch, isEditForm, setDataEdit }}
+    >
       <section className="vh-100 gradient-custom">
         <div className="container py-5 h-100">
           <div
