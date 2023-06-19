@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 // import context được provider
 import {toDolistContext} from "../Todolist";
-
+import { message } from 'antd';
 export default function Content() {
 
   // dùng useContext để đọc context 
@@ -48,8 +48,13 @@ export default function Content() {
               </div>
               <div>
                 <a onClick={() => {
-                  setDataEdit(true, item)
-                }} href="#!" className="text-info" title="Sửa công việc">
+                  if (item.did) {
+                    message.info("Bạn đã hoàn thành công việc này");
+                  }else {
+                    setDataEdit(true, item)
+                  }
+                }} href="#!" className="text-info" title="Sửa công việc"
+                >
                   <i className="fas fa-pencil-alt me-3" />
                 </a>
                 <a onClick={() => {

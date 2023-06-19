@@ -50,7 +50,8 @@ export default function EditTools() {
             type="submit"
             className="btn btn-info
                                     ms-2"
-            onClick={() => {
+            onClick={(e) => {
+              e.preventDefault();
               dispatch({
                 type: "addNewDoList",
                 newDoList: {
