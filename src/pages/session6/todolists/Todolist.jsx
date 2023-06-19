@@ -42,7 +42,7 @@ export default function Todolist() {
   function reducerTodolist(state, action) {
     switch (action.type) {
       case "addNewDoList":
-        return [...state, action.newDoList];
+        return [action.newDoList, ...state];
       case "updateDoList":
         setIsEditForm(
           {
@@ -65,11 +65,11 @@ export default function Todolist() {
         throw new Error();
     }
   }
-  
-  
 
   // tạo ra state và dispatch dùng useReducer
   const [state, dispatch] = useReducer(reducerTodolist, initStateToDoList);
+
+
 
   return (
     <toDolistContext.Provider value={{state, dispatch, isEditForm, setDataEdit}}>

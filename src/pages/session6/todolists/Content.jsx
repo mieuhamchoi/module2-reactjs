@@ -16,12 +16,13 @@ export default function Content() {
     }
     return count;
   }
+
   return (
     <div className="tab-content">
       <div className="tab-pane fade show active">
       <span>Bạn còn {countLiveDoList(state)} nhiệm vụ cần hoàn thành</span>
         <ul className="list-group mb-0">
-          {state.map((item) => (
+          {state.sort((a, b) => a.did - b.did).map((item) => (
             <li
               className="list-group-item d-flex align-items-center border-0 mb-2 rounded justify-content-between"
               style={{ backgroundColor: "#f4f6f7" }}
