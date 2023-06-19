@@ -1,8 +1,8 @@
 import React, { createContext, useState, useReducer } from "react";
 import "./Todolist.scss";
-import EditTools from "./EditTools";
-import Content from "./Content";
-import Navbar from "./Navbar";
+import EditTools from "./components/EditTools";
+import Content from "./components/Content";
+import Navbar from "./components/Navbar";
 
 // tạo ra context để cung cấp các dữ liệu
 export const toDolistContext = createContext();

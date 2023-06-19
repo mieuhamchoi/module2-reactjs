@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 // import context được provider
-import {toDolistContext} from "./Todolist";
+import {toDolistContext} from "../Todolist";
 
 export default function Content() {
 
