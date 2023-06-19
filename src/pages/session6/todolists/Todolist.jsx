@@ -28,12 +28,12 @@ export default function Todolist() {
   const initStateToDoList = [
     {
       id: 0,
-      des: "Đi làm ở đâu đó",
+      des: "Đi làm ở Rikkei",
       did: false,
     },
     {
       id: 1,
-      des: "Đi tìm tình yêu",
+      des: "Học Java",
       did: true,
     },
   ];
