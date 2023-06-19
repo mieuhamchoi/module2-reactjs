@@ -7,9 +7,19 @@ export default function Content() {
   // dùng useContext để đọc context 
   const {state, dispatch, setDataEdit} = useContext(toDolistContext);
 
+  function countLiveDoList() {
+    let count = 0;
+    for (let i in state) {
+      if (!state[i].did) {
+        count++;
+      }
+    }
+    return count;
+  }
   return (
     <div className="tab-content">
       <div className="tab-pane fade show active">
+      <span>Bạn còn {countLiveDoList(state)} nhiệm vụ cần hoàn thành</span>
         <ul className="list-group mb-0">
           {state.map((item) => (
             <li
