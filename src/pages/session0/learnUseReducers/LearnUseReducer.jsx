@@ -1,5 +1,5 @@
 import React from "react";
-import ReactFake  from "./examples/reactFake";
+import ReactFake from "./examples/reactFake";
 
 export default function LearnUseReducer() {
   /*

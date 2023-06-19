@@ -23,6 +23,8 @@ import UseMemo from "./pages/session4/UseMemo";
 import UseCallback from "./pages/session4/UseCallback";
 //..session 5
 import MeoMeo from "./pages/session5/meomeos/MeoMeo";
+//..session 6
+import Todolist from "./pages/session6/todolists/Todolist";
 //.........................components
 import Navbar from "./components/Navbar";
 
@@ -55,6 +57,10 @@ export default function TabContainer() {
     {
       sessionNumber: 5,
       sessionHomeWork: ["MeoMeo"],
+    },
+    {
+      sessionNumber: 6,
+      sessionHomeWork: ["Todolist"],
     },
   ];
   const [isPending, startTransition] = useTransition();
@@ -96,6 +102,7 @@ export default function TabContainer() {
             {tab === "TaskKeeper" && <TaskKeeper />}
             {tab === "LearnUseReducer" && <LearnUseReducer />}
             {tab === "Test" && <Test />}
+            {tab === "Todolist" && <Todolist />}
           </div>
         </div>
       </div>
