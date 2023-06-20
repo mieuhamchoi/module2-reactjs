@@ -25,6 +25,8 @@ import UseCallback from "./pages/session4/UseCallback";
 import MeoMeo from "./pages/session5/meomeos/MeoMeo";
 //..session 6
 import Todolist from "./pages/session6/todolists/Todolist";
+//..session 7
+import MeoFashion from "./pages/session7/meoFashions/MeoFashion";
 //..session 8
 import ReactRouter from "./pages/session8/reactRouters/ReactRouter";
 //.........................components
@@ -63,6 +65,10 @@ export default function TabContainer() {
     {
       sessionNumber: 6,
       sessionHomeWork: ["Todolist"],
+    },
+    {
+      sessionNumber: 7,
+      sessionHomeWork: ["Meo Fashion"],
     },
     {
       sessionNumber: 8,
@@ -110,6 +116,7 @@ export default function TabContainer() {
             {tab === "Test" && <Test />}
             {tab === "Todolist" && <Todolist />}
             {tab === "React Router" && <ReactRouter />}
+            {tab === "Meo Fashion" && <MeoFashion />}
           </div>
         </div>
       </div>
