@@ -315,7 +315,24 @@
         &.show {
             opacity: 1;
             transform: translateY(0);
-            margin: 0 10px;
+        }
+    }
+    .animate-left-scroll {
+        opacity: 0;
+        transform: translateX(-20px);
+        transition: opacity 1s, transform 1s;
+        &.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    .animate-right-scroll {
+        opacity: 0;
+        transform: translateX(20px);
+        transition: opacity 1s, transform 1s;
+        &.show {
+            opacity: 1;
+            transform: translateX(0);
         }
     }
 }

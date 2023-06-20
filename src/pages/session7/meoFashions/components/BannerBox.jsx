@@ -33,10 +33,14 @@ export default function BannerBox() {
    
    function animateOnScroll() {
       var elements = document.querySelectorAll('.animate-on-scroll');
-      
+      var elementsLeft = document.querySelector('.animate-left-scroll');
+      var elementsRight = document.querySelector('.animate-right-scroll');
+
       elements.forEach(function(element) {
          if (isElementInViewport(element)) {
             element.classList.add('show');
+            elementsLeft.classList.add('show');
+            elementsRight.classList.add('show');
          }
       });
    }
@@ -54,7 +58,13 @@ export default function BannerBox() {
          <div className='bannerBox_contents'>
             {
                bannerList.map((banner, index) => 
-                  <div key={banner.id + index} style={{backgroundImage: `url(${banner.bgimg})`}} className={index != 1 ? 'banner_items' : 'banner_items animate-on-scroll'} >
+                  <div key={banner.id + index} style={{backgroundImage: `url(${banner.bgimg})`}} 
+                  className={
+                     index === 1 ? 'banner_items animate-on-scroll' :
+                     index === 0 ? 'banner_items animate-left-scroll' :
+                     index === 2 ? 'banner_items animate-right-scroll' :
+                     ''
+                  } >
                      <div className='bannerDes'>
                         <span className='bannerDes-text'>{banner.des.toUpperCase()}</span>
                      </div>
