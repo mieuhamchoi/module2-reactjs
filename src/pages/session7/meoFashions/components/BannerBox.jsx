@@ -41,6 +41,11 @@ export default function BannerBox() {
             element.classList.add('show');
             elementsLeft.classList.add('show');
             elementsRight.classList.add('show');
+         }else {
+            // ẩn
+            // element.classList.remove('show');
+            // elementsLeft.classList.remove('show');
+            // elementsRight.classList.remove('show');
          }
       });
    }

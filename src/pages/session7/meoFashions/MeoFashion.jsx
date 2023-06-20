@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './meoFashion.scss'
 
 import Navbar from './components/Navbar'
@@ -6,6 +6,7 @@ import CarouselBox from './components/CarouselBox'
 import BannerBox from './components/BannerBox'
 import DealOfWeek from './components/DealOfWeek'
 import Footers from './components/Footers'
+import Benefics from './components/Benefics'
 
 export default function MeoFashion() {
 
@@ -19,7 +20,9 @@ export default function MeoFashion() {
       <BannerBox />
       {/* Deal of weeks section */}
       <DealOfWeek />
-      <div style={{height: "200px"}}></div>
+      {/* Benefic */}
+      <Benefics />
+      {/* <div style={{height: "100px"}}></div> */}
       {/* Footers */}
       <Footers />
     </div>
