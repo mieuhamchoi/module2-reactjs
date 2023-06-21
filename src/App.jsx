@@ -151,6 +151,25 @@ export default function TabContainer() {
       path: ROUTE_NAMES.SESSION7.path,
       element: LazyLoad(() => import('./pages/session7/Session7'))()
     },
+    {
+      sessionNumber: 8,
+      sessionHomeWork: [
+        {
+          name: 'Top Meo',
+          path: ROUTE_NAMES.SESSION8.path + ROUTE_NAMES.SESSION8.TOPMEO,
+          routePath: ROUTE_NAMES.SESSION8.TOPMEO.slice(1),
+          element: LazyLoad(() => import('./pages/session8/TopMeos/TopMeo'))(),
+          details: [
+            {
+              path: "meo-detail/:id",
+              element: LazyLoad(() => import('./pages/session8/TopMeos/MeoDetail'))(),
+            }
+          ]
+        }
+      ],
+      path: ROUTE_NAMES.SESSION8.path,
+      element: LazyLoad(() => import('./pages/session8/Session8'))()
+    },
   ];
 
   function uuidv4() {
@@ -183,7 +202,14 @@ export default function TabContainer() {
                   <Route key={uuidv4()} path={route.path} element={route.element}>
                     {
                       route.sessionHomeWork.map((route) => 
-                      <Route key={uuidv4()} path={route.routePath} element={route.element} />
+                      <>
+                        <Route key={uuidv4()} path={route.routePath} element={route.element} /> 
+                          {
+                            route.details?.map((item) => 
+                              <Route key={uuidv4()} path={item.path} element={item.element} />
+                            )
+                          }
+                        </>
                       )
                     }
                   </Route>

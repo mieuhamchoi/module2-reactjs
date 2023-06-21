@@ -38,4 +38,8 @@ export default {
         path: "/session7",
         MEOFASHION: "/meo-fashion",
     },
+    SESSION8: {
+        path: "/session8",
+        TOPMEO: "/top-meo",
+    },
 };
