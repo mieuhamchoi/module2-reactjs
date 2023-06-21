@@ -14,6 +14,8 @@ Ant Design: `https://ant.design/docs/spec/introduce`
 
 React Router Dom: `https://v5.reactrouter.com/web/guides/quick-start`
 
+Mutilple Language (i18next): `https://react.i18next.com/getting-started`
+
 ## Require
 
 Node JS 14+
