@@ -1,7 +1,7 @@
 import React from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 
-export default function Session0() {
+export default function Session7() {
   const location = useLocation();
   return (
     <>
