@@ -35,21 +35,29 @@ export default function BannerBox() {
 
   function animateOnScroll() {
     var elements = document.querySelectorAll(".animate-on-scroll");
-    var elementsLeft = document.querySelector(".animate-left-scroll");
-    var elementsRight = document.querySelector(".animate-right-scroll");
-
+    
     elements.forEach(function (element) {
       if (isElementInViewport(element)) {
         element.classList.add("show");
-        elementsLeft.classList.add("show");
-        elementsRight.classList.add("show");
       } else {
-        // ẩn
-        // element.classList.remove('show');
-        // elementsLeft.classList.remove('show');
-        // elementsRight.classList.remove('show');
+        element.classList.remove("show");
       }
     });
+  
+    var elementsLeft = document.querySelector(".animate-left-scroll");
+    var elementsRight = document.querySelector(".animate-right-scroll");
+  
+    if (isElementInViewport(elementsLeft)) {
+      elementsLeft.classList.add("show");
+    } else {
+      elementsLeft.classList.remove("show");
+    }
+  
+    if (isElementInViewport(elementsRight)) {
+      elementsRight.classList.add("show");
+    } else {
+      elementsRight.classList.remove("show");
+    }
   }
 
   useEffect(() => {
@@ -60,12 +68,21 @@ export default function BannerBox() {
     // Thực hiện kiểm tra khi trang web được tải
     animateOnScroll();
   }, []);
+
+  function uuidv4() {
+    return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
+      (
+        c ^
+        (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
+      ).toString(16)
+    );
+  }
   return (
     <div className="bannerBox">
       <div className="bannerBox_contents">
         {bannerList.map((banner, index) => (
           <div
-            key={banner.id + index}
+            key={uuidv4()}
             style={{ backgroundImage: `url(${banner.bgimg})` }}
             className={
               index === 1
