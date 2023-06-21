@@ -1,7 +1,10 @@
 import React, {useState} from 'react'
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 export default function MeoDetail() {
+  const location = useLocation();
+
     const { id } = useParams();
+
     const [meos, setMeos] = useState(
         [
           {
@@ -57,6 +60,9 @@ export default function MeoDetail() {
         }
         return null
     }
+
+    document.title =`HW | ${location.pathname.split('/')[location.pathname.split('/').length - 2].toUpperCase()} | ${id}`; 
+
   return (
     <div className="card" style={{width: "18rem"}}>
         <img style={{maxHeight: "280px", objectFit: "fill"}} className="card-img-top" src={getMeoDetail(id).iconUrl}/>
