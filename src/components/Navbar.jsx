@@ -1,12 +1,15 @@
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Navbar(props) {
+  const navigate = useNavigate();
+
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <Link className="navbar-brand" to="">
           NTBPhuoc (Rikkei Academy)
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -22,26 +25,24 @@ export default function Navbar(props) {
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             {props.listTab.map((session) => (
               <li key={session.sessionNumber} className="nav-item dropdown">
-                <a
+                <span
                   className="nav-link dropdown-toggle"
-                  href="#"
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
-                  onClick={() => {}}
+                  onClick={() => navigate(session.path)}
                 >
                   Session {session.sessionNumber}
-                </a>
+                </span>
                 <ul className="dropdown-menu">
                   {session.sessionHomeWork.map((homeWork, index) => (
                     <li key={session.sessionNumber + index}>
-                      <a
-                        onClick={() => props.selectTab(homeWork)}
+                      <Link
                         className="dropdown-item"
-                        href="#"
+                        to={homeWork.path}
                       >
-                        {homeWork}
-                      </a>
+                        {homeWork.name}
+                      </Link>
                     </li>
                   ))}
                 </ul>

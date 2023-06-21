@@ -1,96 +1,44 @@
 import "./App.scss"; // link css
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/css/bootstrap.min.css"; // css react boostrap
-import { useState, useTransition } from "react";
-
-//.........................pages
-import TaskKeeper from "./pages/session0/TaskKeepers/TaskKeeper";
-import LearnUseReducer from "./pages/session0/learnUseReducers/LearnUseReducer";
-import Test from "./pages/session0/tests/Test";
-//..session 2
-import FlipCoin from "./pages/session2/FlipCoins/FlipCoin";
-import SearchProduct from "./pages/session2/SearchProducts/SearchProduct";
-//..session 3
-import LifeCycle from "./pages/session3/LifeCycle";
-import Form from "./pages/session3/Forms/Form";
-//..session 4
-import UseState from "./pages/session4/UseState";
-import UseEffect from "./pages/session4/UseEffect";
-import UseReducer from "./pages/session4/UseReducer";
-import Parent from "./pages/session4/UseContexts/Parent";
-import UseRef from "./pages/session4/UseRef";
-import UseMemo from "./pages/session4/UseMemo";
-import UseCallback from "./pages/session4/UseCallback";
-//..session 5
-import MeoMeo from "./pages/session5/meomeos/MeoMeo";
-//..session 6
-import Todolist from "./pages/session6/todolists/Todolist";
-//..session 7
-import MeoFashion from "./pages/session7/meoFashions/MeoFashion";
-//..session 8
-import ReactRouter from "./pages/session8/reactRouters/ReactRouter";
-//.........................components
 import Navbar from "./components/Navbar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ROUTE_NAMES  from './routeNames';
+import LazyLoad from './LazyLoad';
 
 export default function TabContainer() {
   const listTab = [
     {
       sessionNumber: 0,
-      sessionHomeWork: ["TaskKeeper", "LearnUseReducer", "Test"],
-    },
-    {
-      sessionNumber: 2,
-      sessionHomeWork: ["Flip Coin", "Search Product"],
-    },
-    {
-      sessionNumber: 3,
-      sessionHomeWork: ["Lifecycle", "Forms"],
-    },
-    {
-      sessionNumber: 4,
       sessionHomeWork: [
-        "UseState",
-        "UseEffect",
-        "UseReducer",
-        "UseContext",
-        "UseRef",
-        "UseMemo",
-        "UseCallback",
+        {
+          name: 'Learn Use Reducer',
+          path: ROUTE_NAMES.SESSION0 + '/' + ROUTE_NAMES.SESSION0_LEARNUSEREDUCER,
+          element: LazyLoad(() => import('./pages/session0/learnUseReducers/LearnUseReducer'))()
+        },
+        {
+          name: 'Task Keepers',
+          path: ROUTE_NAMES.SESSION0 + '/' + ROUTE_NAMES.SESSION0_TASKKEEPER,
+          element: LazyLoad(() => import('./pages/session0/TaskKeepers/TaskKeeper'))()
+        }
       ],
-    },
-    {
-      sessionNumber: 5,
-      sessionHomeWork: ["MeoMeo"],
-    },
-    {
-      sessionNumber: 6,
-      sessionHomeWork: ["Todolist"],
-    },
-    {
-      sessionNumber: 7,
-      sessionHomeWork: ["Meo Fashion"],
-    },
-    {
-      sessionNumber: 8,
-      sessionHomeWork: ["React Router"],
-    },
+      path: ROUTE_NAMES.SESSION0,
+      element: LazyLoad(() => import('./pages/session0/Session0'))()
+    }
   ];
-  const [isPending, startTransition] = useTransition();
-  const [tab, setTab] = useState("FlipCoin");
-
-  function selectTab(nextTab) {
-    startTransition(() => {
-      setTab(nextTab);
-    });
+  
+  function uuidv4() {
+    return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
+      (
+        c ^
+        (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
+      ).toString(16)
+    );
   }
-
   return (
-    <>
+    <BrowserRouter>
       <div className="page__container">
         <div className="navbar__container">
           <div className="content">
             <Navbar
-              selectTab={selectTab}
               listTab={listTab}
               style={{ width: "100%" }}
             ></Navbar>
@@ -98,28 +46,23 @@ export default function TabContainer() {
         </div>
         <div className="content__container">
           <div className="content">
-            {/* session 2 */}
-            {tab === "Flip Coin" && <FlipCoin />}
-            {tab === "Search Product" && <SearchProduct />}
-            {tab === "Lifecycle" && <LifeCycle />}
-            {tab === "Forms" && <Form />}
-            {tab === "UseState" && <UseState />}
-            {tab === "UseEffect" && <UseEffect />}
-            {tab === "UseReducer" && <UseReducer />}
-            {tab === "UseContext" && <Parent />}
-            {tab === "UseRef" && <UseRef />}
-            {tab === "UseMemo" && <UseMemo />}
-            {tab === "UseCallback" && <UseCallback />}
-            {tab === "MeoMeo" && <MeoMeo />}
-            {tab === "TaskKeeper" && <TaskKeeper />}
-            {tab === "LearnUseReducer" && <LearnUseReducer />}
-            {tab === "Test" && <Test />}
-            {tab === "Todolist" && <Todolist />}
-            {tab === "React Router" && <ReactRouter />}
-            {tab === "Meo Fashion" && <MeoFashion />}
+            {/* Nội dung render theo router sẽ xuất hiện */}
+            <Routes>
+              {
+                listTab.map((route) => 
+                  <Route key={uuidv4()} path={route.path} element={route.element}>
+                    {
+                      route.sessionHomeWork.map((route) => 
+                        <Route key={uuidv4()} path={route.path} element={route.element} />
+                      )
+                    }
+                  </Route>
+                )
+              }
+            </Routes>
           </div>
         </div>
       </div>
-    </>
+    </BrowserRouter>
   );
 }

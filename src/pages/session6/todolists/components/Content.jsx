@@ -20,9 +20,16 @@ export default function Content() {
     <div className="tab-content">
       <div className="tab-pane fade show active">
         <span>
-          <span style={{color: "green"}}>Doing: {countLiveDoList(state)}</span> || 
-          <span style={{color: "blue"}}>  Finish: {state.length - countLiveDoList(state)}</span> || 
-          <span style={{color: "red"}}> Total: {state.length} </span>
+          <span style={{ color: "green" }}>
+            Doing: {countLiveDoList(state)}
+          </span>{" "}
+          ||
+          <span style={{ color: "blue" }}>
+            {" "}
+            Finish: {state.length - countLiveDoList(state)}
+          </span>{" "}
+          ||
+          <span style={{ color: "red" }}> Total: {state.length} </span>
         </span>
         <ul className="list-group mb-0">
           {state
@@ -89,7 +96,7 @@ export default function Content() {
                 </div>
               </li>
             ))}
-            {state.length == 0 ? <>Bạn chưa có kế hoạch nào</> : <></>}
+          {state.length == 0 ? <>Bạn chưa có kế hoạch nào</> : <></>}
         </ul>
       </div>
     </div>

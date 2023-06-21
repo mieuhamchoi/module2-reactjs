@@ -1,17 +1,16 @@
-import React from 'react'
-import './meoFashion.scss'
+import React from "react";
+import "./meoFashion.scss";
 
-import Navbar from './components/Navbar'
-import CarouselBox from './components/CarouselBox'
-import BannerBox from './components/BannerBox'
-import DealOfWeek from './components/DealOfWeek'
-import Footers from './components/Footers'
-import Benefics from './components/Benefics'
+import Navbar from "./components/Navbar";
+import CarouselBox from "./components/CarouselBox";
+import BannerBox from "./components/BannerBox";
+import DealOfWeek from "./components/DealOfWeek";
+import Footers from "./components/Footers";
+import Benefics from "./components/Benefics";
 
 export default function MeoFashion() {
-
   return (
-    <div className='meoFashion_container'>
+    <div className="meoFashion_container">
       {/* Nav bar */}
       <Navbar />
       {/* Carousel */}
@@ -26,5 +25,5 @@ export default function MeoFashion() {
       {/* Footers */}
       <Footers />
     </div>
-  )
+  );
 }
