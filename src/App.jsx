@@ -3,8 +3,8 @@ import Navbar from "./components/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ROUTE_NAMES  from './routeNames';
 import LazyLoad from './LazyLoad';
-
-export default function TabContainer() {
+import React from "react";
+export default function App() {
   const listTab = [
     {
       sessionNumber: 0,
@@ -199,17 +199,20 @@ export default function TabContainer() {
               <Route path="/" element={LazyLoad(() => import('./pages/Home'))()} />
               {
                 listTab.map((route) => 
+                  // session number
                   <Route key={uuidv4()} path={route.path} element={route.element}>
                     {
                       route.sessionHomeWork.map((route) => 
-                      <>
-                        <Route key={uuidv4()} path={route.routePath} element={route.element} /> 
-                          {
-                            route.details?.map((item) => 
-                              <Route key={uuidv4()} path={item.path} element={item.element} />
-                            )
-                          }
-                        </>
+                        <React.Fragment key={uuidv4()}>
+                            {/* session home work (top meo) */}
+                            <Route key={uuidv4()} path={route.routePath} element={route.element} /> 
+                            {
+                              route.details?.map((item) => 
+                                // session 8 có meoDetail
+                                <Route key={uuidv4()} path={item.path} element={item.element} />
+                              )
+                            }
+                        </React.Fragment>
                       )
                     }
                   </Route>
