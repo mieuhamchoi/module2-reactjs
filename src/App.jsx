@@ -5,11 +5,9 @@ import ROUTE_NAMES  from './routeNames';
 import LazyLoad from './LazyLoad';
 import React, { useEffect, useState } from "react";
 import { useTranslation  } from 'react-i18next';
-
+import PageConfig from './components/PageConfig'
 export default function App() {
   const { t } = useTranslation();
-
-  const [showConfigMenu, setShowConfigMenu] = useState(false);
 
   const listTab = [
     {
@@ -227,30 +225,7 @@ export default function App() {
             </Routes>
           </div>
         </div>
-        <div className={`pageConfig ${showConfigMenu ? 'show' : ''}`}>
-            <div className="pageConfig_titles">
-                <span>{t('myConfig')}</span>
-            </div>
-            <div className="pageConfig_switchLanguage">
-              <div style={{zIndex: "99000000"}} className="dropdown">
-                <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Dropdown button
-                </button>
-                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a className="dropdown-item" href="#">Action</a>
-                  <a className="dropdown-item" href="#">Another action</a>
-                  <a className="dropdown-item" href="#">Something else here</a>
-                </div>
-              </div>
-            </div>
-            <div onClick={() => {
-              setShowConfigMenu(!showConfigMenu)
-            }} className="pageConfig_control">
-              {
-                showConfigMenu ? <i className="fa-solid fa-angles-right"></i> : <i className="fa-solid fa-angles-left"></i>
-              }
-            </div>
-        </div>
+        <PageConfig />
       </div>
     </BrowserRouter>
   );

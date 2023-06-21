@@ -110,6 +110,34 @@
       font-size: 25px;
       cursor: pointer;
     }
+    .pageConfig_switchLanguage {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      height: 50px;
+      .dropdown-items {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        .item-btn {
+          background-color: white;
+          border: none;
+          font-size: 15px;
+          border: 1px solid #e6e6e6;
+          color: black;
+        }
+        &:last-child {
+          border-right: unset;
+        }
+        z-index: 1001;
+      }
+      .nowLanguageImg {
+        height: 70%;
+        object-fit: fill;
+        margin-left: 5px;
+      }
+    }
     transform: translateX(95%);
     transition: all 0.5s;
     &.show {
