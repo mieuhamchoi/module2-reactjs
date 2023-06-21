@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
+import { useTranslation  } from 'react-i18next';
 export default function Navbar(props) {
   const navigate = useNavigate();
   const [result, setResult] = useState([]);
   const [searchInfo, setSearchInfo] = useState('');
-
+  const { t } = useTranslation();
   function searchBySessionHomeWorkName(infoSearch) {
     const results = [];
   
@@ -87,7 +87,7 @@ export default function Navbar(props) {
               className="form-control me-2"
               type="search"
               aria-label="Search"
-              placeholder="search home work"
+              placeholder={t('searchHomeWork')}
               value={searchInfo}
               onChange={(e) => {
                 setSearchInfo(e.target.value)
