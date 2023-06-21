@@ -1,8 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function Navbar(props) {
   const navigate = useNavigate();
+  const [result, setResult] = useState([]);
+  const [searchInfo, setSearchInfo] = useState('');
+
+  function searchBySessionHomeWorkName(infoSearch) {
+    const results = [];
+  
+    for (const tab of props.listTab) {
+      for (const sessionHomeWork of tab.sessionHomeWork) {
+        const name = sessionHomeWork.name.toLowerCase();
+        if (name.includes(infoSearch.toLowerCase())) {
+          sessionHomeWork.session = tab.sessionNumber;
+          results.push(sessionHomeWork);
+        }
+      }
+    }
+  
+    return results;
+  }
+  
+  function uuidv4() {
+    return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
+      (
+        c ^
+        (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
+      ).toString(16)
+    );
+  }
+
+  useEffect(() => {
+    if (searchInfo != '') {
+      setResult(searchBySessionHomeWorkName(searchInfo));
+    }
+  }, [searchInfo])
 
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -49,17 +82,35 @@ export default function Navbar(props) {
               </li>
             ))}
           </ul>
-          <form className="d-flex" role="search">
+          <div style={{position: "relative"}} className="d-flex" role="search">
             <input
               className="form-control me-2"
               type="search"
-              placeholder="Search"
               aria-label="Search"
+              placeholder="search home work"
+              value={searchInfo}
+              onChange={(e) => {
+                setSearchInfo(e.target.value)
+              }}
             />
-            <button className="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
+            <i style={{position: "absolute", right: "-20px", top: "10px", fontSize: "20px", color: "grey"}} className="fa-solid fa-magnifying-glass"></i>
+            {
+              result.length > 0 ?             
+                <div className="searchResults">
+                  {
+                    result.map((item, index) => 
+                      <Link onClick={() => {
+                        setSearchInfo("");
+                        setResult([]);
+                      }} key={uuidv4()} className="result-items" to={item.path} rel="noopener noreferrer">
+                        #{index + 1}/ {item.name} (Session {item.session})
+                      </Link>
+                    )
+                  }
+                </div> :
+              <></>
+            }
+          </div>
         </div>
       </div>
     </nav>

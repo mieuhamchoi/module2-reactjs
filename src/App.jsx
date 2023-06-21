@@ -177,6 +177,7 @@ export default function TabContainer() {
           <div className="content">
             {/* Nội dung render theo router sẽ xuất hiện */}
             <Routes>
+              <Route path="/" element={LazyLoad(() => import('./pages/Home'))()} />
               {
                 listTab.map((route) => 
                   <Route key={uuidv4()} path={route.path} element={route.element}>
