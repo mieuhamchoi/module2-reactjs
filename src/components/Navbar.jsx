@@ -76,7 +76,7 @@ export default function Navbar(props) {
                           role="button"
                           data-bs-toggle="dropdown"
                           aria-expanded="false"
-                          onClick={() => navigate(session.path)}
+                          // onClick={() => navigate(session.path)}
                         >
                           {t("session")} {session.sessionNumber}
                         </span>
