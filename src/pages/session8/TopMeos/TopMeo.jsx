@@ -74,7 +74,7 @@ export default function TopMeo() {
     >   
     {
       meos.map((meo, index) =>
-        <Col  onClick={() => navigate(`/session8/meo-detail/${meo.id}`)} style={{marginBottom: "20px", minWidth: "300px"}} className="gutter-row" span={6}>
+        <Col key={uuidv4()} onClick={() => navigate(`/session8/meo-detail/${meo.id}`)} style={{marginBottom: "20px", minWidth: "300px"}} className="gutter-row" span={6}>
           <div className="card" style={{width: "18rem"}}>
             <img style={{maxHeight: "280px", objectFit: "fill"}} className="card-img-top" src={meo.iconUrl}/>
             <div className="card-body">
