@@ -1,17 +1,22 @@
 import React, { useState } from "react";
-
+import MenuBtn from '../../../../components/MenuBtns/MenuBtn'
 export default function Navbar() {
   const [menuIsActive, setMenuIsActive] = useState(false);
-  const menuBtnClassName = `menu-btn ${menuIsActive ? " open" : ""}`;
+
   return (
     <div className="navbar">
-      <div
+      {/* <div
         onClick={() => {
           setMenuIsActive(!menuIsActive);
         }}
         className={menuBtnClassName}
       >
         <div className="menu-btn__burger"></div>
+      </div> */}
+      <div onClick={() => {
+        setMenuIsActive(!menuIsActive)
+      }}>
+        <MenuBtn open={menuIsActive} />
       </div>
       <span className="title">MEOMEO</span>
       <div className="user_tools">
