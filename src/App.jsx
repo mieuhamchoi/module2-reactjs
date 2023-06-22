@@ -225,6 +225,13 @@ export default function App() {
     );
   }
 
+  function getMode() {
+    return localStorage.getItem('mode') ? localStorage.getItem('mode') : 'light'
+  }
+
+  useEffect(() => {
+    document.querySelector('.page__container').style.setProperty('--background-color', getMode() == 'light' ? 'white' : 'black')
+  }, [])
   return (
     <BrowserRouter>
       <Provider store={store}>

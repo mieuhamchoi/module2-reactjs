@@ -3,7 +3,9 @@
     .logos {
         display: flex;
         .logo_img {
+            --text-color: '';
             font-family: 'Black Ops One', cursive;
+            color: var(--text-color);
         }
         .logo_menu_btn {
             display: flex;

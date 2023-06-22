@@ -5,6 +5,7 @@ import i18n from "i18next";
 export default function PageConfig() {
   const { t } = useTranslation();
   const [showConfigMenu, setShowConfigMenu] = useState(false);
+
   const [languages, setLanguages] = useState([
     {
       id: 0,
@@ -21,6 +22,7 @@ export default function PageConfig() {
       code: "en",
     },
   ]);
+
   function uuidv4() {
     return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
       (
@@ -29,6 +31,7 @@ export default function PageConfig() {
       ).toString(16)
     );
   }
+
   function getIcon(code) {
     for (let i in languages) {
       if (languages[i].code == code) {
@@ -36,6 +39,10 @@ export default function PageConfig() {
       }
     }
     return null;
+  } 
+
+  function getMode() {
+    return localStorage.getItem('mode') ? localStorage.getItem('mode') : 'light'
   }
   return (
     <div className={`pageConfig ${showConfigMenu ? "show" : ""}`}>
@@ -45,7 +52,7 @@ export default function PageConfig() {
       <div className="pageConfig_switchLanguage">
         <div className="dropdown dropdown-items">
           <a
-            className="item-btn btn btn-secondary dropdown-toggle"
+            className="item-btn btn btn-secondary dropdown-toggle selectLanguage_text"
             href="#"
             role="button"
             data-bs-toggle="dropdown"
@@ -71,9 +78,27 @@ export default function PageConfig() {
         </div>
         <img className="nowLanguageImg" src={getIcon(i18n.language)?.iconUrl} />
       </div>
+      <div className="pageConfig_switchMode">
+          <div className="switchMode_titles">
+              <span className="titles-text">Mode: <div className={`nowMode ${getMode()}`}></div></span>
+          </div>
+          <div className="switchMode_options">
+              <span onClick={() => {
+                localStorage.setItem('mode', 'light')
+                window.location.reload()
+              }} className="options_item light">Light</span>
+              <span onClick={() => {
+                localStorage.setItem('mode', 'dark')
+                window.location.reload()
+              }} className="options_item dark">Dark</span>
+          </div>
+      </div>
       <div
+        onMouseEnter={() => {
+          setShowConfigMenu(true);
+        }}
         onClick={() => {
-          setShowConfigMenu(!showConfigMenu);
+          setShowConfigMenu(false);
         }}
         className="pageConfig_control"
       >

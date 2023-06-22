@@ -6,11 +6,13 @@ import './Navbar.scss'
 import { Col, Row } from "antd";
 export default function Navbar(props) {
   const [openMenu, setOpenMenu] = useState(false);
-  const navigate = useNavigate();
   const [result, setResult] = useState([]);
   const [searchInfo, setSearchInfo] = useState("");
   const { t } = useTranslation();
   const [menuColor, setMenuColor] = useState('black')
+  const [menuPopColor, setMenuPopColor] = useState('white')
+  const [menuPopColorText, setMenuPopColorText] = useState('black')
+  const [searchIconColor, setSearchIconColor] = useState('grey')
 
   function searchBySessionHomeWorkName(infoSearch) {
     const results = [];
@@ -43,6 +45,18 @@ export default function Navbar(props) {
     }
   }, [searchInfo]);
 
+  function getMode() {
+    return localStorage.getItem('mode') ? localStorage.getItem('mode') : 'light'
+  }
+
+  useEffect(() => {
+    document.querySelector('.logo_img').style.setProperty('--text-color', getMode() == 'light' ? 'black' : 'white')
+
+    setMenuColor(getMode() == 'light' ? 'black' : 'white')
+    setMenuPopColor(getMode() == 'light' ? 'white' : 'black')
+    setMenuPopColorText(getMode() == 'light' ? 'black' : 'white')
+    setSearchIconColor(getMode() == 'light' ? 'grey' : 'white')
+  }, [])
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
@@ -53,17 +67,17 @@ export default function Navbar(props) {
           </Link>
           <div onMouseEnter={() => {
             setOpenMenu(true)
-            setMenuColor('red')
+            setMenuColor(menuColor)
           }} onMouseLeave={() => {
             setOpenMenu(false)
-            setMenuColor('black')
+            setMenuColor(menuColor)
           }} className="logo_menu_btn">
             <div  onClick={() => setOpenMenu(false)}>
               <MenuBtn open={openMenu} color={menuColor}/>
             </div>
             <span onClick={() => setOpenMenu(false)} style={{color: menuColor}} className="logo_menu_btn-text">{t('category')}</span>
             {/* Menu bar */}
-            <div className={`menu_pops ${openMenu ? 'show' : ''}`}>
+            <div style={{backgroundColor: menuPopColor}} className={`menu_pops ${openMenu ? 'show' : ''}`}>
               <Row
                 gutter={{
                   xs: 8,
@@ -83,6 +97,7 @@ export default function Navbar(props) {
                           role="button"
                           data-bs-toggle="dropdown"
                           aria-expanded="false"
+                          style={{color: menuPopColorText}}
                           // onClick={() => navigate(session.path)}
                         >
                           {t("session")} {session.sessionNumber}
@@ -105,34 +120,7 @@ export default function Navbar(props) {
             </div>
           </div>
         </div>
-        {/* Menu bar */}
-        {/* <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            {props.listTab.map((session) => (
-              <li key={session.sessionNumber} className="nav-item dropdown">
-                <span
-                  className="nav-link dropdown-toggle"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                  onClick={() => navigate(session.path)}
-                >
-                  {t("session")} {session.sessionNumber}
-                </span>
-                <ul className="dropdown-menu">
-                  {session.sessionHomeWork.map((homeWork, index) => (
-                    <li key={session.sessionNumber + index}>
-                      <Link className="dropdown-item" to={homeWork.path}>
-                        {homeWork.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </li>
-            ))}
-          </ul>
-        </div> */}
-        {/* Search bar */}
+        {/* Search Bar */}
         <div
           style={{ position: "relative", minWidth: "200px" }}
           className="d-flex"
@@ -154,7 +142,7 @@ export default function Navbar(props) {
               right: "-20px",
               top: "10px",
               fontSize: "20px",
-              color: "grey",
+              color: searchIconColor,
             }}
             className="fa-solid fa-magnifying-glass"
           ></i>
