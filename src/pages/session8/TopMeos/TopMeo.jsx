@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Col, Row } from "antd";
-import { Outlet, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 export default function TopMeo() {
   const navigate = useNavigate();
 
