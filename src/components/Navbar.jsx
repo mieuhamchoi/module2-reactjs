@@ -54,7 +54,7 @@ export default function Navbar(props) {
             <div  onClick={() => setOpenMenu(!openMenu)}>
               <MenuBtn open={openMenu} color="black"/>
             </div>
-            <span  onClick={() => setOpenMenu(!openMenu)} className="logo_menu_btn-text">DANH MỤC</span>
+            <span  onClick={() => setOpenMenu(!openMenu)} className="logo_menu_btn-text">{t('category')}</span>
             {/* Menu bar */}
             <div className={`menu_pops ${openMenu ? 'show' : ''}`}>
               <Row

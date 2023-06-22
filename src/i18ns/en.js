@@ -23,5 +23,6 @@ export default {
     meoFashion: 'Meo Fashion Template',
     topMeo: 'Top Meo React Router',
     exampleRedux: 'Example Redux',
-    toDoListRedux: 'To Do List Project (Redux)'
+    toDoListRedux: 'To Do List Project (Redux)',
+    category: "CATEGORY"
 }
