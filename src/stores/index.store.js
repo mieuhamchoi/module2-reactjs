@@ -2,8 +2,8 @@
 
 import { createStore, combineReducers } from 'redux';
 
-import countReducer from './reducers/count.reducer';
-import toDoListReducer from './reducers/toDoList.reducer';
+import countReducer from './countStores/count.reducer';
+import toDoListReducer from './toDoListStores/toDoList.reducer';
 
 const rootReducer = combineReducers({
   countStore: countReducer,

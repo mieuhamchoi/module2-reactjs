@@ -1,5 +1,5 @@
 // count.reducer.js
-import {INCREMENT, DECREMENT} from '../constants/count.constant'
+import {INCREMENT, DECREMENT} from './count.constant'
 
 const initialState = {
     count: 0

@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   incrementCount,
   decrementCount,
-} from "../../stores/actions/count.action";
+} from "../../stores/countStores/count.action";
 
 export default function ExampleRedux() {
   const countStore = useSelector((state) => state.countStore); // Lấy giá trị count từ store

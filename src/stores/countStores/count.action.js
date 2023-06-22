@@ -1,6 +1,6 @@
 // count.actions.js
 
-import { INCREMENT, DECREMENT } from '../constants/count.constant';
+import { INCREMENT, DECREMENT } from './count.constant';
 
 export const incrementCount = () => ({
   type: INCREMENT

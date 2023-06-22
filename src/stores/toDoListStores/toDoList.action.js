@@ -1,4 +1,4 @@
-import {ADDNEWDO, DELETEDO, UPDATEDO} from '../constants/toDoList.constant'
+import {ADDNEWDO, DELETEDO, UPDATEDO} from './toDoList.constant'
 
 export const addNewDo = (newDo) => ({
   type: ADDNEWDO,

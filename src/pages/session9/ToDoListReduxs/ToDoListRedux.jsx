@@ -4,7 +4,7 @@ import {
   addNewDo,
   deleteDo,
   updateDo,
-} from "../../../stores/actions/toDoList.action";
+} from "../../../stores/toDoListStores/toDoList.action";
 
 import "../../session6/todolists/Todolist.scss";
 import Content from "./components/Content";
