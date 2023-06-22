@@ -6,6 +6,8 @@ import LazyLoad from './LazyLoad';
 import React, { useEffect, useState } from "react";
 import { useTranslation  } from 'react-i18next';
 import PageConfig from './components/PageConfig'
+import {store} from './stores/index.store'
+import { Provider } from "react-redux";
 export default function App() {
   const { t } = useTranslation();
 
@@ -174,6 +176,25 @@ export default function App() {
       path: ROUTE_NAMES.SESSION8.path,
       element: LazyLoad(() => import('./pages/session8/Session8'))()
     },
+    {
+      sessionNumber: 9,
+      sessionHomeWork: [
+        {
+          name: 'Example Redux',
+          path: ROUTE_NAMES.SESSION9.path + ROUTE_NAMES.SESSION9.EXAMPLEREDUX,
+          routePath: ROUTE_NAMES.SESSION9.EXAMPLEREDUX.slice(1),
+          element: LazyLoad(() => import('./pages/session9/ExampleRedux'))(),
+        },
+        {
+          name: 'To Do List Redux',
+          path: ROUTE_NAMES.SESSION9.path + ROUTE_NAMES.SESSION9.TODOLISTREDUX,
+          routePath: ROUTE_NAMES.SESSION9.TODOLISTREDUX.slice(1),
+          element: LazyLoad(() => import('./pages/session9/ToDoListReduxs/ToDoListRedux'))(),
+        }
+      ],
+      path: ROUTE_NAMES.SESSION9.path,
+      element: LazyLoad(() => import('./pages/session9/Session9'))()
+    }
   ];
 
   function uuidv4() {
@@ -187,46 +208,48 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <div className="page__container">
-        <div className="navbar__container">
-          <div className="content">
-            <Navbar
-              listTab={listTab}
-              style={{ width: "100%" }}
-            ></Navbar>
+      <Provider store={store}>
+        <div className="page__container">
+          <div className="navbar__container">
+            <div className="content">
+              <Navbar
+                listTab={listTab}
+                style={{ width: "100%" }}
+              ></Navbar>
+            </div>
           </div>
-        </div>
-        <div className="content__container">
-          <div className="content">
-            {/* Nội dung render theo router sẽ xuất hiện */}
-            <Routes>
-              <Route path="/" element={LazyLoad(() => import('./pages/Home'))()} />
-              {
-                listTab.map((route) => 
-                  // session number
-                  <Route key={uuidv4()} path={route.path} element={route.element}>
-                    {
-                      route.sessionHomeWork.map((route) => 
-                        <React.Fragment key={uuidv4()}>
-                            {/* session home work (top meo) */}
-                            <Route key={uuidv4()} path={route.routePath} element={route.element} /> 
-                            {
-                              route.details?.map((item) => 
-                                // session 8 có meoDetail
-                                <Route key={uuidv4()} path={item.path} element={item.element} />
-                              )
-                            }
-                        </React.Fragment>
-                      )
-                    }
-                  </Route>
-                )
-              }
-            </Routes>
+          <div className="content__container">
+            <div className="content">
+              {/* Nội dung render theo router sẽ xuất hiện */}
+              <Routes>
+                <Route path="/" element={LazyLoad(() => import('./pages/Home'))()} />
+                {
+                  listTab.map((route) => 
+                    // session number
+                    <Route key={uuidv4()} path={route.path} element={route.element}>
+                      {
+                        route.sessionHomeWork.map((route) => 
+                          <React.Fragment key={uuidv4()}>
+                              {/* session home work (top meo) */}
+                              <Route key={uuidv4()} path={route.routePath} element={route.element} /> 
+                              {
+                                route.details?.map((item) => 
+                                  // session 8 có meoDetail
+                                  <Route key={uuidv4()} path={item.path} element={item.element} />
+                                )
+                              }
+                          </React.Fragment>
+                        )
+                      }
+                    </Route>
+                  )
+                }
+              </Routes>
+            </div>
           </div>
+          <PageConfig />
         </div>
-        <PageConfig />
-      </div>
+      </Provider>
     </BrowserRouter>
   );
 }

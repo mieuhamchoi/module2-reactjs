@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useTranslation  } from 'react-i18next';
+
 export default function Navbar(props) {
   const navigate = useNavigate();
   const [result, setResult] = useState([]);
@@ -82,7 +83,8 @@ export default function Navbar(props) {
               </li>
             ))}
           </ul>
-          <div style={{position: "relative"}} className="d-flex" role="search">
+        </div>
+        <div style={{position: "relative", minWidth: "200px"}} className="d-flex" role="search">
             <input
               className="form-control me-2"
               type="search"
@@ -111,7 +113,6 @@ export default function Navbar(props) {
               <></>
             }
           </div>
-        </div>
       </div>
     </nav>
   );

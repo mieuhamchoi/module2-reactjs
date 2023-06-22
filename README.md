@@ -16,6 +16,8 @@ React Router Dom: `https://v5.reactrouter.com/web/guides/quick-start`
 
 Mutilple Language (i18next): `https://react.i18next.com/getting-started`
 
+Redux, React Redux: `https://viblo.asia/p/hoc-react-redux-trong-15-phut-1Je5E7q0ZnL`
+
 ## Require
 
 Node JS 14+

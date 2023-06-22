@@ -42,4 +42,9 @@ export default {
         path: "/session8",
         TOPMEO: "/top-meo",
     },
+    SESSION9: {
+        path: "/session9",
+        EXAMPLEREDUX: "/example-redux",
+        TODOLISTREDUX: "/to-do-list-redux",
+    },
 };
