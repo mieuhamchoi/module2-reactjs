@@ -10,6 +10,7 @@ export default function Navbar(props) {
   const [result, setResult] = useState([]);
   const [searchInfo, setSearchInfo] = useState("");
   const { t } = useTranslation();
+  const [menuColor, setMenuColor] = useState('black')
 
   function searchBySessionHomeWorkName(infoSearch) {
     const results = [];
@@ -50,11 +51,17 @@ export default function Navbar(props) {
           <Link style={{ fontWeight: "700" }} className="logo_img navbar-brand" to="">
             NTBPhuoc (Rikkei Academy)
           </Link>
-          <div onMouseEnter={() => setOpenMenu(true)} onMouseLeave={() => setOpenMenu(false)} className="logo_menu_btn">
+          <div onMouseEnter={() => {
+            setOpenMenu(true)
+            setMenuColor('red')
+          }} onMouseLeave={() => {
+            setOpenMenu(false)
+            setMenuColor('black')
+          }} className="logo_menu_btn">
             <div  onClick={() => setOpenMenu(false)}>
-              <MenuBtn open={openMenu} color="black"/>
+              <MenuBtn open={openMenu} color={menuColor}/>
             </div>
-            <span onClick={() => setOpenMenu(false)} className="logo_menu_btn-text">{t('category')}</span>
+            <span onClick={() => setOpenMenu(false)} style={{color: menuColor}} className="logo_menu_btn-text">{t('category')}</span>
             {/* Menu bar */}
             <div className={`menu_pops ${openMenu ? 'show' : ''}`}>
               <Row
