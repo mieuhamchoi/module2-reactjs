@@ -50,11 +50,11 @@ export default function Navbar(props) {
           <Link style={{ fontWeight: "700" }} className="logo_img navbar-brand" to="">
             NTBPhuoc (Rikkei Academy)
           </Link>
-          <div className="logo_menu_btn">
-            <div  onClick={() => setOpenMenu(!openMenu)}>
+          <div onMouseEnter={() => setOpenMenu(true)} onMouseLeave={() => setOpenMenu(false)} className="logo_menu_btn">
+            <div  onClick={() => setOpenMenu(false)}>
               <MenuBtn open={openMenu} color="black"/>
             </div>
-            <span  onClick={() => setOpenMenu(!openMenu)} className="logo_menu_btn-text">{t('category')}</span>
+            <span onClick={() => setOpenMenu(false)} className="logo_menu_btn-text">{t('category')}</span>
             {/* Menu bar */}
             <div className={`menu_pops ${openMenu ? 'show' : ''}`}>
               <Row
