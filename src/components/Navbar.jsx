@@ -41,7 +41,7 @@ export default function Navbar(props) {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
-        <Link className="navbar-brand" to="">
+        <Link style={{fontWeight: '700'}} className="navbar-brand" to="">
           NTBPhuoc (Rikkei Academy)
         </Link>
         <button
@@ -66,7 +66,7 @@ export default function Navbar(props) {
                   aria-expanded="false"
                   onClick={() => navigate(session.path)}
                 >
-                  Session {session.sessionNumber}
+                  {t('session')} {session.sessionNumber}
                 </span>
                 <ul className="dropdown-menu">
                   {session.sessionHomeWork.map((homeWork, index) => (

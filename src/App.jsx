@@ -16,13 +16,13 @@ export default function App() {
       sessionNumber: 0,
       sessionHomeWork: [
         {
-          name: 'Learn Use Reducer',
+          name: t('learnUseReducer'),
           path: ROUTE_NAMES.SESSION0.path + ROUTE_NAMES.SESSION0.LEARNUSEREDUCER,
           routePath: ROUTE_NAMES.SESSION0.LEARNUSEREDUCER.slice(1),
           element: LazyLoad(() => import('./pages/session0/learnUseReducers/LearnUseReducer'))()
         },
         {
-          name: 'Task Keepers',
+          name: t('taskKeeper'),
           path: ROUTE_NAMES.SESSION0.path + ROUTE_NAMES.SESSION0.TASKKEEPER,
           routePath: ROUTE_NAMES.SESSION0.TASKKEEPER.slice(1),
           element: LazyLoad(() => import('./pages/session0/TaskKeepers/TaskKeeper'))()
@@ -35,13 +35,13 @@ export default function App() {
       sessionNumber: 2,
       sessionHomeWork: [
         {
-          name: 'Flip Coin',
+          name: t('flipCoint'),
           path: ROUTE_NAMES.SESSION2.path + ROUTE_NAMES.SESSION2.FLIPCOIN,
           routePath: ROUTE_NAMES.SESSION2.FLIPCOIN.slice(1),
           element: LazyLoad(() => import('./pages/session2/FlipCoins/FlipCoin'))()
         },
         {
-          name: 'Search Products',
+          name: t('searchProduct'),
           path: ROUTE_NAMES.SESSION2.path + ROUTE_NAMES.SESSION2.SEARCHPRODUCT,
           routePath: ROUTE_NAMES.SESSION2.SEARCHPRODUCT.slice(1),
           element: LazyLoad(() => import('./pages/session2/SearchProducts/SearchProduct'))()
@@ -54,13 +54,13 @@ export default function App() {
       sessionNumber: 3,
       sessionHomeWork: [
         {
-          name: 'Life Cycle',
+          name: t('lifeCycle'),
           path: ROUTE_NAMES.SESSION3.path + ROUTE_NAMES.SESSION3.LIFECYCLE,
           routePath: ROUTE_NAMES.SESSION3.LIFECYCLE.slice(1),
           element: LazyLoad(() => import('./pages/session3/LifeCycle'))()
         },
         {
-          name: 'Forms',
+          name: t('form'),
           path: ROUTE_NAMES.SESSION3.path + ROUTE_NAMES.SESSION3.FROMS,
           routePath: ROUTE_NAMES.SESSION3.FROMS.slice(1),
           element: LazyLoad(() => import('./pages/session3/Forms/Form'))()
@@ -73,43 +73,43 @@ export default function App() {
       sessionNumber: 4,
       sessionHomeWork: [
         {
-          name: 'useState()',
+          name: t('useState'),
           path: ROUTE_NAMES.SESSION4.path + ROUTE_NAMES.SESSION4.USESTATE,
           routePath: ROUTE_NAMES.SESSION4.USESTATE.slice(1),
           element: LazyLoad(() => import('./pages/session4/UseState'))()
         },
         {
-          name: 'useEffect()',
+          name: t('useEffect'),
           path: ROUTE_NAMES.SESSION4.path + ROUTE_NAMES.SESSION4.USEEFFECT,
           routePath: ROUTE_NAMES.SESSION4.USEEFFECT.slice(1),
           element: LazyLoad(() => import('./pages/session4/UseEffect'))()
         },
         {
-          name: 'useMemo()',
+          name: t('useMemo'),
           path: ROUTE_NAMES.SESSION4.path + ROUTE_NAMES.SESSION4.USEMEMO,
           routePath: ROUTE_NAMES.SESSION4.USEMEMO.slice(1),
           element: LazyLoad(() => import('./pages/session4/UseMemo'))()
         },
         {
-          name: 'useCallback()',
+          name: t('useCallback'),
           path: ROUTE_NAMES.SESSION4.path + ROUTE_NAMES.SESSION4.USECALLBACK,
           routePath: ROUTE_NAMES.SESSION4.USECALLBACK.slice(1),
           element: LazyLoad(() => import('./pages/session4/UseCallback'))()
         },
         {
-          name: 'useReducer()',
+          name: t('useReducer'),
           path: ROUTE_NAMES.SESSION4.path + ROUTE_NAMES.SESSION4.USEREDUCER,
           routePath: ROUTE_NAMES.SESSION4.USEREDUCER.slice(1),
           element: LazyLoad(() => import('./pages/session4/UseReducer'))()
         },
         {
-          name: 'useRef()',
+          name: t('useRef'),
           path: ROUTE_NAMES.SESSION4.path + ROUTE_NAMES.SESSION4.USEREF,
           routePath: ROUTE_NAMES.SESSION4.USEREF.slice(1),
           element: LazyLoad(() => import('./pages/session4/UseRef'))()
         },
         {
-          name: 'useContext()',
+          name: t('useContext'),
           path: ROUTE_NAMES.SESSION4.path + ROUTE_NAMES.SESSION4.USECONTEXT,
           routePath: ROUTE_NAMES.SESSION4.USECONTEXT.slice(1),
           element: LazyLoad(() => import('./pages/session4/UseContexts/Parent'))()
@@ -122,7 +122,7 @@ export default function App() {
       sessionNumber: 5,
       sessionHomeWork: [
         {
-          name: 'Meo Meo Ui',
+          name: t('meoMeoUi'),
           path: ROUTE_NAMES.SESSION5.path + ROUTE_NAMES.SESSION5.MEOMEOUI,
           routePath: ROUTE_NAMES.SESSION5.MEOMEOUI.slice(1),
           element: LazyLoad(() => import('./pages/session5/meomeos/MeoMeo'))()
@@ -135,7 +135,7 @@ export default function App() {
       sessionNumber: 6,
       sessionHomeWork: [
         {
-          name: 'To Do List Project',
+          name: t('toDoListProject'),
           path: ROUTE_NAMES.SESSION6.path + ROUTE_NAMES.SESSION6.TODOLIST,
           routePath: ROUTE_NAMES.SESSION6.TODOLIST.slice(1),
           element: LazyLoad(() => import('./pages/session6/todolists/Todolist'))()
@@ -148,7 +148,7 @@ export default function App() {
       sessionNumber: 7,
       sessionHomeWork: [
         {
-          name: 'Meo Fashion',
+          name: t('meoFashion'),
           path: ROUTE_NAMES.SESSION7.path + ROUTE_NAMES.SESSION7.MEOFASHION,
           routePath: ROUTE_NAMES.SESSION7.MEOFASHION.slice(1),
           element: LazyLoad(() => import('./pages/session7/meoFashions/MeoFashion'))()
@@ -161,7 +161,7 @@ export default function App() {
       sessionNumber: 8,
       sessionHomeWork: [
         {
-          name: 'Top Meo',
+          name: t('topMeo'),
           path: ROUTE_NAMES.SESSION8.path + ROUTE_NAMES.SESSION8.TOPMEO,
           routePath: ROUTE_NAMES.SESSION8.TOPMEO.slice(1),
           element: LazyLoad(() => import('./pages/session8/TopMeos/TopMeo'))(),
@@ -180,13 +180,13 @@ export default function App() {
       sessionNumber: 9,
       sessionHomeWork: [
         {
-          name: 'Example Redux',
+          name: t('exampleRedux'),
           path: ROUTE_NAMES.SESSION9.path + ROUTE_NAMES.SESSION9.EXAMPLEREDUX,
           routePath: ROUTE_NAMES.SESSION9.EXAMPLEREDUX.slice(1),
           element: LazyLoad(() => import('./pages/session9/ExampleRedux'))(),
         },
         {
-          name: 'To Do List Redux',
+          name: t('toDoListRedux'),
           path: ROUTE_NAMES.SESSION9.path + ROUTE_NAMES.SESSION9.TODOLISTREDUX,
           routePath: ROUTE_NAMES.SESSION9.TODOLISTREDUX.slice(1),
           element: LazyLoad(() => import('./pages/session9/ToDoListReduxs/ToDoListRedux'))(),
