@@ -1,6 +1,10 @@
-import React, { useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux';
-import { addNewDo, deleteDo, updateDo } from '../../../stores/actions/toDoList.action';
+import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  addNewDo,
+  deleteDo,
+  updateDo,
+} from "../../../stores/actions/toDoList.action";
 
 import "../../session6/todolists/Todolist.scss";
 import Content from "./components/Content";
@@ -22,7 +26,7 @@ export default function ToDoListRedux() {
   }
 
   const dispatch = useDispatch();
-  const toDoListStore = useSelector(state => state.toDoListStore);
+  const toDoListStore = useSelector((state) => state.toDoListStore);
 
   return (
     <section className="vh-70 gradient-custom">
@@ -37,12 +41,24 @@ export default function ToDoListRedux() {
                 <h3 style={{ textAlign: "center", marginBottom: 40 }}>
                   MINI PROJECT TODO LIST
                 </h3>
-                <EditTool dispatch={dispatch} addNewDo={addNewDo} updateDo={updateDo} isEditForm={isEditForm} setIsEditForm={setIsEditForm}></EditTool>
+                <EditTool
+                  dispatch={dispatch}
+                  addNewDo={addNewDo}
+                  updateDo={updateDo}
+                  isEditForm={isEditForm}
+                  setIsEditForm={setIsEditForm}
+                ></EditTool>
                 {/* Tabs navs */}
                 <Navbar></Navbar>
                 {/* Tabs navs */}
                 {/* Tabs content */}
-                <Content doList={toDoListStore} dispatch={dispatch} deleteDo={deleteDo} updateDo={updateDo} setDataEdit={setDataEdit}></Content>
+                <Content
+                  doList={toDoListStore}
+                  dispatch={dispatch}
+                  deleteDo={deleteDo}
+                  updateDo={updateDo}
+                  setDataEdit={setDataEdit}
+                ></Content>
                 {/* Tabs content */}
               </div>
             </div>
@@ -50,5 +66,5 @@ export default function ToDoListRedux() {
         </div>
       </div>
     </section>
-  )
+  );
 }

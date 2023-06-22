@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Modal } from "antd";
 
 export default function EditTools(props) {
-
   function uuidv4() {
     return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
       (
@@ -51,13 +50,13 @@ export default function EditTools(props) {
                 content: "Bạn xác nhận thêm mới?",
                 onOk() {
                   // Xử lý khi người dùng xác nhận
-                  props.dispatch(props.addNewDo(
-                    {
+                  props.dispatch(
+                    props.addNewDo({
                       id: uuidv4(),
                       des: doListName,
                       did: false,
-                    }
-                  ));
+                    })
+                  );
                   setDoListName("");
                 },
                 onCancel() {
@@ -95,18 +94,17 @@ export default function EditTools(props) {
                 content: "Bạn xác nhận cập nhật?",
                 onOk() {
                   // Xử lý khi người dùng xác nhận
-                  props.dispatch(props.updateDo(
-                    {
+                  props.dispatch(
+                    props.updateDo({
                       ...props.isEditForm.doListUpdate,
                       des: doListNameUpdate,
-                    }
-                  ));
+                    })
+                  );
 
                   props.setIsEditForm({
                     status: false,
                     doListUpdate: null,
                   });
-
                 },
                 onCancel() {
                   // Xử lý khi người dùng hủy bỏ

@@ -1,41 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@900&display=swap");
 .home_container {
-    background-image: url("https://api.mieuhamchoi.fun/uploads/picture/subject/1686692234094-323980751.jpg");
-    width: 100%;
-    height: calc(100vh - 80px);
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
-    .home_sologan {
-        position: absolute;
-        top: 10%;
-        left: 10%;
-        font-size: 40px;
-        font-family: 'Unbounded', cursive;;
-        animation: colorChange 2s infinite alternate, bounce 0.5s infinite alternate;
-    }
+  background-image: url("https://api.mieuhamchoi.fun/uploads/picture/subject/1686692234094-323980751.jpg");
+  width: 100%;
+  height: calc(100vh - 80px);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  .home_sologan {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    font-size: 40px;
+    font-family: "Unbounded", cursive;
+    animation: colorChange 2s infinite alternate, bounce 0.5s infinite alternate;
+  }
 }
 
 @keyframes colorChange {
-    0% {
-        color: red;
-    }
-    50% {
-        color: blue;
-    }
-    100% {
-        color: green;
-    }
+  0% {
+    color: red;
+  }
+  50% {
+    color: blue;
+  }
+  100% {
+    color: green;
+  }
 }
 
 @keyframes bounce {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-    100% {
-        transform: translateY(0);
-    }
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }

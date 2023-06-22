@@ -32,7 +32,10 @@ export default function DealOfWeek() {
   return (
     <div className="dealOfWeeks animate-on-scroll">
       <div className="dealOfWeeks_imgbox">
-        <img className="dealOfWeeks_img" src='https://api.mieuhamchoi.fun/uploads/picture/subject/1686592860306-273121484.png' />
+        <img
+          className="dealOfWeeks_img"
+          src="https://api.mieuhamchoi.fun/uploads/picture/subject/1686592860306-273121484.png"
+        />
       </div>
       <div className="dealOfWeeks_info">
         <div className="info_titles">

@@ -9,15 +9,19 @@
   top: 0;
   left: 0;
   z-index: 10000;
-    .rotating-image {
-      width: 250px;
-      height: 250px;
-      position: relative;
-      animation: rotate 2s infinite linear;
-    }
+  .rotating-image {
+    width: 250px;
+    height: 250px;
+    position: relative;
+    animation: rotate 2s infinite linear;
+  }
 }
 
 @keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

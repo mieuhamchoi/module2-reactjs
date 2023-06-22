@@ -35,7 +35,7 @@ export default function BannerBox() {
 
   function animateOnScroll() {
     var elements = document.querySelectorAll(".animate-on-scroll");
-    
+
     elements.forEach(function (element) {
       if (isElementInViewport(element)) {
         element.classList.add("show");
@@ -43,16 +43,16 @@ export default function BannerBox() {
         element.classList.remove("show");
       }
     });
-  
+
     var elementsLeft = document.querySelector(".animate-left-scroll");
     var elementsRight = document.querySelector(".animate-right-scroll");
-  
+
     if (isElementInViewport(elementsLeft)) {
       elementsLeft.classList.add("show");
     } else {
       elementsLeft.classList.remove("show");
     }
-  
+
     if (isElementInViewport(elementsRight)) {
       elementsRight.classList.add("show");
     } else {

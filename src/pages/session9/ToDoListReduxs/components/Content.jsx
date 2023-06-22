@@ -2,7 +2,6 @@ import React from "react";
 import { message, Modal } from "antd";
 
 export default function Content(props) {
-
   function countLiveDoList() {
     let count = 0;
     for (let i in props.doList) {
@@ -17,10 +16,7 @@ export default function Content(props) {
     <div className="tab-content">
       <div className="tab-pane fade show active">
         <span>
-          <span style={{ color: "green" }}>
-            Doing: {countLiveDoList()}
-          </span>{" "}
-          ||
+          <span style={{ color: "green" }}>Doing: {countLiveDoList()}</span> ||
           <span style={{ color: "blue" }}>
             {" "}
             Finish: {props.doList.length - countLiveDoList()}
@@ -42,7 +38,11 @@ export default function Content(props) {
                     className="form-check-input me-2"
                     type="checkbox"
                     defaultChecked={item.did}
-                    onChange={() => props.dispatch(props.updateDo({...item, did: !item.did}))}
+                    onChange={() =>
+                      props.dispatch(
+                        props.updateDo({ ...item, did: !item.did })
+                      )
+                    }
                   />
                   {item.did ? <s>{item.des}</s> : item.des}
                 </div>
@@ -68,7 +68,7 @@ export default function Content(props) {
                         content: "Bạn muốn xóa công việc này?",
                         onOk() {
                           // Xử lý khi người dùng xác nhận
-                          props.dispatch(props.deleteDo(item.id))
+                          props.dispatch(props.deleteDo(item.id));
                         },
                         onCancel() {
                           // Xử lý khi người dùng hủy bỏ
