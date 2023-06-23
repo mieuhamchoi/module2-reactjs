@@ -86,10 +86,8 @@
     }
   }
   .shoppingCart {
-    width: 40%;
-    max-width: 500px;
-    height: 300px;
-    overflow-y: auto;
+    width: 60%;
+    max-width: 700px;
     border: 1px solid #f8f2f3;
     border-radius: 5px;
     padding: 5px;
@@ -106,6 +104,38 @@
       color: #ca8aa5;
       font-weight: 900;
       padding: 5px;
+    }
+    .shoppingCart_items {
+        max-height: 500px;
+        overflow-y: auto;
+        .table {
+            .table_th {
+                position: sticky;
+                top: 0
+            }
+            .table_content {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &.actions {
+                    .btn {
+                        width: 60px;
+                        font-size: 10px;
+                        margin-right: 2px;
+                        font-weight: 900;
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .table_emptyNoti {
+        width: 100%;
+        border-bottom: 1px solid grey;
+        padding: 20px;
     }
   }
 }
