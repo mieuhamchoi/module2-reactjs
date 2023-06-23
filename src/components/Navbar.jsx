@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import MenuBtn from './MenuBtns/MenuBtn'
 import './Navbar.scss'
 import { Col, Row } from "antd";
+import MeoMeoJs from '@mieuteacher/meomeojs'
 export default function Navbar(props) {
   const [openMenu, setOpenMenu] = useState(false);
   const [result, setResult] = useState([]);
@@ -28,15 +29,6 @@ export default function Navbar(props) {
     }
 
     return results;
-  }
-
-  function uuidv4() {
-    return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
-      (
-        c ^
-        (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
-      ).toString(16)
-    );
   }
 
   useEffect(() => {
@@ -90,8 +82,9 @@ export default function Navbar(props) {
                   <Col
                     style={{ marginBottom: "20px", minWidth: "100px" }}
                     span={4}
+                    key={session.sessionNumber}
                   >
-                      <div key={session.sessionNumber} className="nav-item dropdown">
+                      <div className="nav-item dropdown">
                         <span
                           className="nav-link dropdown-toggle session-text"
                           role="button"
@@ -154,7 +147,7 @@ export default function Navbar(props) {
                     setSearchInfo("");
                     setResult([]);
                   }}
-                  key={uuidv4()}
+                  key={MeoMeoJs.uuidv4()}
                   className="result-items"
                   to={item.path}
                   rel="noopener noreferrer"

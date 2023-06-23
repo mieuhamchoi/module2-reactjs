@@ -2,20 +2,11 @@ import React, { useState, useContext, useEffect } from "react";
 
 // import context được provider
 import { toDolistContext } from "../Todolist";
-
 import { Modal } from "antd";
+import MeoMeoJs from '@mieuteacher/meomeojs'
 export default function EditTools() {
   // dùng useContext để đọc context
   const { state, dispatch, isEditForm } = useContext(toDolistContext);
-
-  function uuidv4() {
-    return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
-      (
-        c ^
-        (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
-      ).toString(16)
-    );
-  }
 
   const [doListName, setDoListName] = useState("");
   const [doListNameUpdate, setDoListNameUpdate] = useState("");
@@ -59,7 +50,7 @@ export default function EditTools() {
                   dispatch({
                     type: "addNewDoList",
                     newDoList: {
-                      id: uuidv4(),
+                      id: MeoMeoJs.uuidv4(),
                       des: doListName,
                       did: false,
                     },

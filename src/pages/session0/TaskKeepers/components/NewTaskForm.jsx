@@ -1,18 +1,11 @@
 import React, { useState } from "react";
-
+import MeoMeoJs from '@mieuteacher/meomeojs'
 export default function NewTaskForm(props) {
   const [taskName, setTaskName] = useState("");
   const [date, setDate] = useState("1999-12-29");
   const [status, setStatus] = useState("Choose");
   const [targetName, setTargetName] = useState("");
-  function uuidv4() {
-    return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
-      (
-        c ^
-        (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
-      ).toString(16)
-    );
-  }
+
   return (
     <form className="newTaskFrom">
       {/* Date Picker */}
@@ -78,7 +71,7 @@ export default function NewTaskForm(props) {
           props.handleAddTask({
             type: "addTask",
             newTask: {
-              taskId: uuidv4(),
+              taskId: MeoMeoJs.uuidv4(),
               taskName,
               date,
               status,

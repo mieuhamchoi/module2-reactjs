@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Col, Row } from "antd";
 import { useNavigate } from "react-router-dom";
+import MeoMeoJs from '@mieuteacher/meomeojs'
 export default function TopMeo() {
   const navigate = useNavigate();
 
@@ -55,14 +56,6 @@ export default function TopMeo() {
     },
   ]);
 
-  function uuidv4() {
-    return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
-      (
-        c ^
-        (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
-      ).toString(16)
-    );
-  }
 
   return (
     <>
@@ -76,7 +69,7 @@ export default function TopMeo() {
       >
         {meos.map((meo, index) => (
           <Col
-            key={uuidv4()}
+            key={MeoMeoJs.uuidv4()}
             onClick={() => navigate(`/session8/meo-detail/${meo.id}`)}
             style={{ marginBottom: "20px", minWidth: "300px" }}
             className="gutter-row"

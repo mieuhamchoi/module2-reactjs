@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import i18n from "i18next";
-
+import MeoMeoJs from '@mieuteacher/meomeojs'
 export default function PageConfig() {
   const { t } = useTranslation();
   const [showConfigMenu, setShowConfigMenu] = useState(false);
@@ -22,15 +22,6 @@ export default function PageConfig() {
       code: "en",
     },
   ]);
-
-  function uuidv4() {
-    return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
-      (
-        c ^
-        (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
-      ).toString(16)
-    );
-  }
 
   function getIcon(code) {
     for (let i in languages) {
@@ -69,7 +60,7 @@ export default function PageConfig() {
                   localStorage.setItem("language", language.code);
                 }}
                 style={{ cursor: "pointer" }}
-                key={uuidv4()}
+                key={MeoMeoJs.uuidv4()}
               >
                 <span className="dropdown-item">{language.name}</span>
               </li>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import MeoMeoJs from '@mieuteacher/meomeojs'
 export default function BannerBox() {
   const [bannerList, setBannerList] = useState([
     {
@@ -69,20 +69,12 @@ export default function BannerBox() {
     animateOnScroll();
   }, []);
 
-  function uuidv4() {
-    return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
-      (
-        c ^
-        (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
-      ).toString(16)
-    );
-  }
   return (
     <div className="bannerBox">
       <div className="bannerBox_contents">
         {bannerList.map((banner, index) => (
           <div
-            key={uuidv4()}
+            key={MeoMeoJs.uuidv4()}
             style={{ backgroundImage: `url(${banner.bgimg})` }}
             className={
               index === 1

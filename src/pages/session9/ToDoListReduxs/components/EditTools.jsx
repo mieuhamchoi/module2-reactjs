@@ -1,15 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Modal } from "antd";
-
+import MeoMeoJs from '@mieuteacher/meomeojs'
 export default function EditTools(props) {
-  function uuidv4() {
-    return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
-      (
-        c ^
-        (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
-      ).toString(16)
-    );
-  }
 
   const [doListName, setDoListName] = useState("");
   const [doListNameUpdate, setDoListNameUpdate] = useState("");
@@ -52,7 +44,7 @@ export default function EditTools(props) {
                   // Xử lý khi người dùng xác nhận
                   props.dispatch(
                     props.addNewDo({
-                      id: uuidv4(),
+                      id: MeoMeoJs.uuidv4(),
                       des: doListName,
                       did: false,
                     })

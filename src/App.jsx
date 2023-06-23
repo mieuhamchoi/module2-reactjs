@@ -8,6 +8,7 @@ import { useTranslation } from "react-i18next";
 import PageConfig from "./components/PageConfig";
 import { store } from "./stores/index.store";
 import { Provider } from "react-redux";
+import MeoMeoJs from '@mieuteacher/meomeojs'
 export default function App() {
   const { t } = useTranslation();
 
@@ -216,15 +217,6 @@ export default function App() {
     },
   ];
 
-  function uuidv4() {
-    return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
-      (
-        c ^
-        (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
-      ).toString(16)
-    );
-  }
-
   function getMode() {
     return localStorage.getItem('mode') ? localStorage.getItem('mode') : 'light'
   }
@@ -252,22 +244,22 @@ export default function App() {
                 {listTab.map((route) => (
                   // session number
                   <Route
-                    key={uuidv4()}
+                    key={MeoMeoJs.uuidv4()}
                     path={route.path}
                     element={route.element}
                   >
                     {route.sessionHomeWork.map((route) => (
-                      <React.Fragment key={uuidv4()}>
+                      <React.Fragment key={MeoMeoJs.uuidv4()}>
                         {/* session home work (top meo) */}
                         <Route
-                          key={uuidv4()}
+                          key={MeoMeoJs.uuidv4()}
                           path={route.routePath}
                           element={route.element}
                         />
                         {route.details?.map((item) => (
                           // session 8 có meoDetail
                           <Route
-                            key={uuidv4()}
+                            key={MeoMeoJs.uuidv4()}
                             path={item.path}
                             element={item.element}
                           />
