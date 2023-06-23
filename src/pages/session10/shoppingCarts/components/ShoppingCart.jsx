@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux';
 import { randomId, convertToVND } from '@mieuteacher/meomeojs';
 import { useDispatch } from 'react-redux';
@@ -12,7 +12,7 @@ export default function ShoppingCartCom() {
 
   function calCartQuantity() {
     return shoppingCartStore.reduce((total, nextItem) => {
-      return total + nextItem.quantity
+      return total + Number(nextItem.quantity)
     }, 0)
   }
 
