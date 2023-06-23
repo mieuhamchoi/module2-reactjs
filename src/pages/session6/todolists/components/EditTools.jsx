@@ -3,7 +3,7 @@ import React, { useState, useContext, useEffect } from "react";
 // import context được provider
 import { toDolistContext } from "../Todolist";
 import { Modal } from "antd";
-import {randomId} from '@mieuteacher/meomeojs'
+import { randomId } from "@mieuteacher/meomeojs";
 export default function EditTools() {
   // dùng useContext để đọc context
   const { state, dispatch, isEditForm } = useContext(toDolistContext);

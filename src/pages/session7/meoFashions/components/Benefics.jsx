@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { randomId } from '@mieuteacher/meomeojs'
+import { randomId } from "@mieuteacher/meomeojs";
 export default function Benefics() {
   const [benefics, setBenefics] = useState([
     {

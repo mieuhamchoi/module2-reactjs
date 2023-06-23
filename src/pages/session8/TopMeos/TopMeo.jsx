@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Col, Row } from "antd";
 import { useNavigate } from "react-router-dom";
-import { randomId } from '@mieuteacher/meomeojs'
+import { randomId } from "@mieuteacher/meomeojs";
 export default function TopMeo() {
   const navigate = useNavigate();
 
@@ -55,7 +55,6 @@ export default function TopMeo() {
       des: "Một chú mèo đáng thương",
     },
   ]);
-
 
   return (
     <>

@@ -47,4 +47,8 @@ export default {
         EXAMPLEREDUX: "/example-redux",
         TODOLISTREDUX: "/to-do-list-redux",
     },
+    SESSION10: {
+        path: "/session10",
+        SHOPPINGCART: "/shopping-cart",
+    },
 };

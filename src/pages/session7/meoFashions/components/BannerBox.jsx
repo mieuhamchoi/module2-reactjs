@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { randomId } from '@mieuteacher/meomeojs'
+import { randomId } from "@mieuteacher/meomeojs";
 export default function BannerBox() {
   const [bannerList, setBannerList] = useState([
     {

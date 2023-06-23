@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 import PageConfig from "./components/PageConfig";
 import { store } from "./stores/index.store";
 import { Provider } from "react-redux";
-import {randomId} from '@mieuteacher/meomeojs'
+import { randomId } from "@mieuteacher/meomeojs";
 export default function App() {
   const { t } = useTranslation();
 
@@ -215,15 +215,37 @@ export default function App() {
       path: ROUTE_NAMES.SESSION9.path,
       element: LazyLoad(() => import("./pages/session9/Session9"))(),
     },
+    {
+      sessionNumber: 10,
+      sessionHomeWork: [
+        {
+          name: t("shoppingCart"),
+          path: ROUTE_NAMES.SESSION10.path + ROUTE_NAMES.SESSION10.SHOPPINGCART,
+          routePath: ROUTE_NAMES.SESSION10.SHOPPINGCART.slice(1),
+          element: LazyLoad(() =>
+            import("./pages/session10/shoppingCarts/ShoppingCart")
+          )(),
+        },
+      ],
+      path: ROUTE_NAMES.SESSION10.path,
+      element: LazyLoad(() => import("./pages/session10/Session10"))(),
+    },
   ];
 
   function getMode() {
-    return localStorage.getItem('mode') ? localStorage.getItem('mode') : 'light'
+    return localStorage.getItem("mode")
+      ? localStorage.getItem("mode")
+      : "light";
   }
 
   useEffect(() => {
-    document.querySelector('.page__container').style.setProperty('--background-color', getMode() == 'light' ? 'white' : 'black');
-  }, [])
+    document
+      .querySelector(".page__container")
+      .style.setProperty(
+        "--background-color",
+        getMode() == "light" ? "white" : "black"
+      );
+  }, []);
   return (
     <BrowserRouter>
       <Provider store={store}>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {randomId} from '@mieuteacher/meomeojs'
+import { randomId } from "@mieuteacher/meomeojs";
 export default function NewTaskForm(props) {
   const [taskName, setTaskName] = useState("");
   const [date, setDate] = useState("1999-12-29");

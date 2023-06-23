@@ -1,0 +1,111 @@
+.shoppingCart_container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid #e6e6e6;
+  padding: 10px;
+  .listProduct {
+    width: 40%;
+    max-width: 500px;
+    max-height: 800px;
+    height: 700px;
+    overflow-y: auto;
+    border: 1px solid #dae6f1;
+    border-radius: 5px;
+    padding: 5px;
+    .titles {
+      width: 100%;
+      height: 30px;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      background-color: #337ab7;
+      position: sticky;
+      top: 0;
+      margin-bottom: 5px;
+      color: white;
+      font-weight: 900;
+      padding: 5px;
+    }
+    .productCards {
+      width: 100%;
+      height: 180px;
+      border-bottom: 5px solid #f9f9f9;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 15px;
+      .productCards_avatar {
+        width: 30%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .avatar_img {
+          width: 100%;
+          height: auto;
+          object-fit: fill;
+        }
+      }
+      .productCards_des {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .des_productName {
+          font-weight: 900;
+        }
+        .des_productPrice {
+          font-weight: 700;
+          font-size: 12px;
+          margin: 5px 0;
+        }
+        .des_detail {
+          font-size: 0.9em;
+        }
+      }
+      .productCards_buytools {
+        width: 15%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        .buytools_amounts {
+          width: 100%;
+          text-align: center;
+        }
+        .buytools_amounts-buyBtn {
+          width: 100%;
+          height: 30px;
+          font-size: 9px;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+  .shoppingCart {
+    width: 40%;
+    max-width: 500px;
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid #f8f2f3;
+    border-radius: 5px;
+    padding: 5px;
+    .titles {
+      width: 100%;
+      height: 30px;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      background-color: #f2dede;
+      position: sticky;
+      top: 0;
+      margin-bottom: 5px;
+      color: #ca8aa5;
+      font-weight: 900;
+      padding: 5px;
+    }
+  }
+}

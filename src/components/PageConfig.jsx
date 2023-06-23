@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import i18n from "i18next";
-import {randomId} from '@mieuteacher/meomeojs'
+import { randomId } from "@mieuteacher/meomeojs";
 export default function PageConfig() {
   const { t } = useTranslation();
   const [showConfigMenu, setShowConfigMenu] = useState(false);
@@ -30,10 +30,12 @@ export default function PageConfig() {
       }
     }
     return null;
-  } 
+  }
 
   function getMode() {
-    return localStorage.getItem('mode') ? localStorage.getItem('mode') : 'light'
+    return localStorage.getItem("mode")
+      ? localStorage.getItem("mode")
+      : "light";
   }
   return (
     <div className={`pageConfig ${showConfigMenu ? "show" : ""}`}>
@@ -70,19 +72,31 @@ export default function PageConfig() {
         <img className="nowLanguageImg" src={getIcon(i18n.language)?.iconUrl} />
       </div>
       <div className="pageConfig_switchMode">
-          <div className="switchMode_titles">
-              <span className="titles-text">Mode: <div className={`nowMode ${getMode()}`}></div></span>
-          </div>
-          <div className="switchMode_options">
-              <span onClick={() => {
-                localStorage.setItem('mode', 'light')
-                window.location.reload()
-              }} className="options_item light">Light</span>
-              <span onClick={() => {
-                localStorage.setItem('mode', 'dark')
-                window.location.reload()
-              }} className="options_item dark">Dark</span>
-          </div>
+        <div className="switchMode_titles">
+          <span className="titles-text">
+            Mode: <div className={`nowMode ${getMode()}`}></div>
+          </span>
+        </div>
+        <div className="switchMode_options">
+          <span
+            onClick={() => {
+              localStorage.setItem("mode", "light");
+              window.location.reload();
+            }}
+            className="options_item light"
+          >
+            Light
+          </span>
+          <span
+            onClick={() => {
+              localStorage.setItem("mode", "dark");
+              window.location.reload();
+            }}
+            className="options_item dark"
+          >
+            Dark
+          </span>
+        </div>
       </div>
       <div
         onMouseEnter={() => {

@@ -25,5 +25,6 @@ export default {
     topMeo: 'Top Meo React Router',
     exampleRedux: 'Ví Dụ Redux',
     toDoListRedux: 'Dự Án Việc Cần Làm (Redux)',
-    category: "DANH MỤC"
+    category: "DANH MỤC",
+    shoppingCart: "Giỏ Hàng"
 }

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Modal } from "antd";
-import { randomId } from '@mieuteacher/meomeojs'
+import { randomId } from "@mieuteacher/meomeojs";
 export default function EditTools(props) {
-
   const [doListName, setDoListName] = useState("");
   const [doListNameUpdate, setDoListNameUpdate] = useState("");
 

@@ -1,51 +1,51 @@
 .menu-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 3em;
-    height: 3em;
-    cursor: pointer;
-    transition: all 0.5 ease-in-out;
-    font-size: 1em;
-    .menu-btn__burger {
-      --background-color: #f5f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3em;
+  height: 3em;
+  cursor: pointer;
+  transition: all 0.5 ease-in-out;
+  font-size: 1em;
+  .menu-btn__burger {
+    --background-color: #f5f4f4;
+    width: 1.8em;
+    height: 0.3em;
+    background: var(--background-color);
+    border-radius: 0.5em;
+    box-shadow: 0 2px 5px rgba(255, 101, 42, 0.2);
+    transition: all 0.2s ease-in-out;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
       width: 1.8em;
       height: 0.3em;
-      background: var(--background-color);;
+      background: var(--background-color);
       border-radius: 0.5em;
       box-shadow: 0 2px 5px rgba(255, 101, 42, 0.2);
       transition: all 0.2s ease-in-out;
-      &::before,
-      &::after {
-        content: "";
-        position: absolute;
-        width: 1.8em;
-        height: 0.3em;
-        background: var(--background-color);;
-        border-radius: 0.5em;
-        box-shadow: 0 2px 5px rgba(255, 101, 42, 0.2);
-        transition: all 0.2s ease-in-out;
-      }
-      &::before {
-        transform: translateY(-0.5em);
-      }
-      &::after {
-        transform: translateY(0.5em);
-      }
     }
-    &.open {
-      .menu-btn__burger {
-        transform: translateX(-50px);
-        background: transparent;
-        box-shadow: none;
+    &::before {
+      transform: translateY(-0.5em);
+    }
+    &::after {
+      transform: translateY(0.5em);
+    }
+  }
+  &.open {
+    .menu-btn__burger {
+      transform: translateX(-50px);
+      background: transparent;
+      box-shadow: none;
+    }
+    .menu-btn__burger {
+      &::before {
+        transform: rotate(45deg) translate(35px, -35px);
       }
-      .menu-btn__burger {
-        &::before {
-          transform: rotate(45deg) translate(35px, -35px);
-        }
-        &::after {
-          transform: rotate(-45deg) translate(35px, 35px);
-        }
+      &::after {
+        transform: rotate(-45deg) translate(35px, 35px);
       }
     }
   }
+}

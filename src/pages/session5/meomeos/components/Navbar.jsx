@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import MenuBtn from '../../../../components/MenuBtns/MenuBtn'
+import MenuBtn from "../../../../components/MenuBtns/MenuBtn";
 export default function Navbar() {
   const [menuIsActive, setMenuIsActive] = useState(false);
 
@@ -13,9 +13,11 @@ export default function Navbar() {
       >
         <div className="menu-btn__burger"></div>
       </div> */}
-      <div onClick={() => {
-        setMenuIsActive(!menuIsActive)
-      }}>
+      <div
+        onClick={() => {
+          setMenuIsActive(!menuIsActive);
+        }}
+      >
         <MenuBtn open={menuIsActive} />
       </div>
       <span className="title">MEOMEO</span>
