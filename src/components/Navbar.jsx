@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import MenuBtn from './MenuBtns/MenuBtn'
 import './Navbar.scss'
 import { Col, Row } from "antd";
-import MeoMeoJs from '@mieuteacher/meomeojs'
+import {randomId} from '@mieuteacher/meomeojs'
 export default function Navbar(props) {
   const [openMenu, setOpenMenu] = useState(false);
   const [result, setResult] = useState([]);
@@ -147,7 +147,7 @@ export default function Navbar(props) {
                     setSearchInfo("");
                     setResult([]);
                   }}
-                  key={MeoMeoJs.uuidv4()}
+                  key={randomId()}
                   className="result-items"
                   to={item.path}
                   rel="noopener noreferrer"

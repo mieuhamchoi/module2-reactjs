@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import MeoMeoJs from '@mieuteacher/meomeojs'
+import {randomId} from '@mieuteacher/meomeojs'
 export default function NewTaskForm(props) {
   const [taskName, setTaskName] = useState("");
   const [date, setDate] = useState("1999-12-29");
@@ -71,7 +71,7 @@ export default function NewTaskForm(props) {
           props.handleAddTask({
             type: "addTask",
             newTask: {
-              taskId: MeoMeoJs.uuidv4(),
+              taskId: randomId(),
               taskName,
               date,
               status,

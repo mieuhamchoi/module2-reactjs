@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import MeoMeoJs from '@mieuteacher/meomeojs'
+import { randomId } from '@mieuteacher/meomeojs'
 export default function Benefics() {
   const [benefics, setBenefics] = useState([
     {
@@ -32,7 +32,7 @@ export default function Benefics() {
     <div className="benefics animate-on-scroll">
       <div className="benefics_contents">
         {benefics.map((benefic, index) => (
-          <div key={MeoMeoJs.uuidv4()} className="benefic_items">
+          <div key={randomId()} className="benefic_items">
             <div className="left-content">
               <i className={benefic.iconClass}></i>
             </div>

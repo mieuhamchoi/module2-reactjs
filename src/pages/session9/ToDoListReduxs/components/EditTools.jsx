@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Modal } from "antd";
-import MeoMeoJs from '@mieuteacher/meomeojs'
+import { randomId } from '@mieuteacher/meomeojs'
 export default function EditTools(props) {
 
   const [doListName, setDoListName] = useState("");
@@ -44,7 +44,7 @@ export default function EditTools(props) {
                   // Xử lý khi người dùng xác nhận
                   props.dispatch(
                     props.addNewDo({
-                      id: MeoMeoJs.uuidv4(),
+                      id: randomId(),
                       des: doListName,
                       did: false,
                     })

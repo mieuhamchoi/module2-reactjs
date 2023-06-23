@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import i18n from "i18next";
-import MeoMeoJs from '@mieuteacher/meomeojs'
+import {randomId} from '@mieuteacher/meomeojs'
 export default function PageConfig() {
   const { t } = useTranslation();
   const [showConfigMenu, setShowConfigMenu] = useState(false);
@@ -60,7 +60,7 @@ export default function PageConfig() {
                   localStorage.setItem("language", language.code);
                 }}
                 style={{ cursor: "pointer" }}
-                key={MeoMeoJs.uuidv4()}
+                key={randomId()}
               >
                 <span className="dropdown-item">{language.name}</span>
               </li>

@@ -3,7 +3,7 @@ import React, { useState, useContext, useEffect } from "react";
 // import context được provider
 import { toDolistContext } from "../Todolist";
 import { Modal } from "antd";
-import MeoMeoJs from '@mieuteacher/meomeojs'
+import {randomId} from '@mieuteacher/meomeojs'
 export default function EditTools() {
   // dùng useContext để đọc context
   const { state, dispatch, isEditForm } = useContext(toDolistContext);
@@ -50,7 +50,7 @@ export default function EditTools() {
                   dispatch({
                     type: "addNewDoList",
                     newDoList: {
-                      id: MeoMeoJs.uuidv4(),
+                      id: randomId(),
                       des: doListName,
                       did: false,
                     },

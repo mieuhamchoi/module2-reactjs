@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 import PageConfig from "./components/PageConfig";
 import { store } from "./stores/index.store";
 import { Provider } from "react-redux";
-import MeoMeoJs from '@mieuteacher/meomeojs'
+import {randomId} from '@mieuteacher/meomeojs'
 export default function App() {
   const { t } = useTranslation();
 
@@ -222,7 +222,7 @@ export default function App() {
   }
 
   useEffect(() => {
-    document.querySelector('.page__container').style.setProperty('--background-color', getMode() == 'light' ? 'white' : 'black')
+    document.querySelector('.page__container').style.setProperty('--background-color', getMode() == 'light' ? 'white' : 'black');
   }, [])
   return (
     <BrowserRouter>
@@ -244,22 +244,22 @@ export default function App() {
                 {listTab.map((route) => (
                   // session number
                   <Route
-                    key={MeoMeoJs.uuidv4()}
+                    key={randomId()}
                     path={route.path}
                     element={route.element}
                   >
                     {route.sessionHomeWork.map((route) => (
-                      <React.Fragment key={MeoMeoJs.uuidv4()}>
+                      <React.Fragment key={randomId()}>
                         {/* session home work (top meo) */}
                         <Route
-                          key={MeoMeoJs.uuidv4()}
+                          key={randomId()}
                           path={route.routePath}
                           element={route.element}
                         />
                         {route.details?.map((item) => (
                           // session 8 có meoDetail
                           <Route
-                            key={MeoMeoJs.uuidv4()}
+                            key={randomId()}
                             path={item.path}
                             element={item.element}
                           />

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import MeoMeoJs from '@mieuteacher/meomeojs'
+import { randomId } from '@mieuteacher/meomeojs'
 export default function BannerBox() {
   const [bannerList, setBannerList] = useState([
     {
@@ -74,7 +74,7 @@ export default function BannerBox() {
       <div className="bannerBox_contents">
         {bannerList.map((banner, index) => (
           <div
-            key={MeoMeoJs.uuidv4()}
+            key={randomId()}
             style={{ backgroundImage: `url(${banner.bgimg})` }}
             className={
               index === 1
