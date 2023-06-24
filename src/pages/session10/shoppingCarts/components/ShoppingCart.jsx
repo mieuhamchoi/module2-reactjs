@@ -96,7 +96,7 @@ export default function ShoppingCartCom() {
               <td>
                 <div className='table_content actions'>
                   <button onClick={(e) => {
-                    let quantity = e.target.parentNode.parentNode.parentNode.querySelector('.quantity').value;
+                    let quantity = Number(e.target.parentNode.parentNode.parentNode.querySelector('.quantity').value);
                     if (!quantity) {
                       dispatch(
                         {
