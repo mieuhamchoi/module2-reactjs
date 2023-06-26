@@ -234,7 +234,7 @@ export default function App() {
       sessionNumber: 11,
       sessionHomeWork: [
         {
-          name: t("shoppingCart"),
+          name: t("Test Json Server"),
           path:
             ROUTE_NAMES.SESSION11.path + ROUTE_NAMES.SESSION11.TEST_JSON_SERVER,
           routePath: ROUTE_NAMES.SESSION11.TEST_JSON_SERVER.slice(1),
