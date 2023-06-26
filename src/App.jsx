@@ -242,6 +242,15 @@ export default function App() {
             import("./pages/session11/TestJsonServers/TestJsonServer")
           )(),
         },
+        {
+          name: t("Axios"),
+          path:
+            ROUTE_NAMES.SESSION11.path + ROUTE_NAMES.SESSION11.AXIOS,
+          routePath: ROUTE_NAMES.SESSION11.AXIOS.slice(1),
+          element: LazyLoad(() =>
+            import("./pages/session11/Axios/Axios")
+          )(),
+        },
       ],
       path: ROUTE_NAMES.SESSION11.path,
       element: LazyLoad(() => import("./pages/session11/Session11"))(),

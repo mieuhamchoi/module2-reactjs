@@ -54,5 +54,6 @@ export default {
     SESSION11: {
         path: "/session11",
         TEST_JSON_SERVER: "/test-json-server",
+        AXIOS: "/axios",
     },
 };
