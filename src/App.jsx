@@ -230,6 +230,22 @@ export default function App() {
       path: ROUTE_NAMES.SESSION10.path,
       element: LazyLoad(() => import("./pages/session10/Session10"))(),
     },
+    {
+      sessionNumber: 11,
+      sessionHomeWork: [
+        {
+          name: t("shoppingCart"),
+          path:
+            ROUTE_NAMES.SESSION11.path + ROUTE_NAMES.SESSION11.TEST_JSON_SERVER,
+          routePath: ROUTE_NAMES.SESSION11.TEST_JSON_SERVER.slice(1),
+          element: LazyLoad(() =>
+            import("./pages/session11/TestJsonServers/TestJsonServer")
+          )(),
+        },
+      ],
+      path: ROUTE_NAMES.SESSION11.path,
+      element: LazyLoad(() => import("./pages/session11/Session11"))(),
+    },
   ];
 
   function getMode() {

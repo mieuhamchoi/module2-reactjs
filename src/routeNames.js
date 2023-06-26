@@ -51,4 +51,8 @@ export default {
         path: "/session10",
         SHOPPINGCART: "/shopping-cart",
     },
+    SESSION11: {
+        path: "/session11",
+        TEST_JSON_SERVER: "/test-json-server",
+    },
 };
