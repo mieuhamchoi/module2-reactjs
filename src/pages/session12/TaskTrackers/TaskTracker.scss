@@ -1,0 +1,166 @@
+.taskTracker_container {
+    width: 100%;
+    height: calc(100vh - 150px);
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    .taskTracker_forms {
+        margin-top: 2em;
+        width: 90em;
+        height: 80em;
+        border: 3px solid #A6BED0;
+        padding: 0.5em;
+        border-radius: 1em;
+        position: relative;
+        .taskTracker_nav {
+            width: 100%;
+            height: 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .taskTracker_nav-text {
+                font-size: 2em;
+                font-weight: 900;
+            }
+            .taskTracker_nav-btn {
+                font-size: 1.3em;
+                font-weight: 700;
+            }
+        }
+        .taskTracker_form {
+            margin-top: 2em;
+            width: 100%;
+            .form_inputs {
+                width: 100%;
+                position: relative;
+                font-size: 1.5em;
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+                .form_inputs-input {
+                    width: 100%;
+                    padding: 5px;
+                    transition: all 0.2s;
+                    outline: none;
+                    border: none;
+                    border-bottom: 1px solid black;
+                    &:focus {
+                        border-bottom: 1px solid blue;
+                    }
+                }
+                .form_inputs-placeholder {
+                    position: absolute;
+                    left: 5px;
+                    transition: all 0.2s;
+                    font-weight: 900;
+                    font-size: 0.8em;
+                }
+                &:focus-within, &.active {
+                    .form_inputs-placeholder {
+                        top: 0;
+                        transform: translateY(-100%);
+                        font-weight: 900;
+                        color: red;
+                        font-size: 1em;
+                    }
+                }
+                &:first-child {
+                    margin-bottom: 10px;
+                }
+                &:last-child {
+                    margin-bottom: unset;
+                }
+            }
+
+            .form-textEditor {
+                margin-top: 20px;
+                font-size: 2em;
+                max-height: 300px;
+                overflow-y: auto;
+            }
+            .filed_title {
+                font-weight: 700;
+                font-size: 1.4em;
+                margin-left: 3px;
+                margin-bottom: 3px;
+            }
+            .form-checkBox {
+                margin-left: 20px;
+            }
+            .form-save {
+                width: 100%;
+                margin-top: 15px;
+                .btn {
+                    width: 100%;
+                }
+            }
+        }
+        .taskTracker_taskList {
+            height: 100%;
+            max-height: 250PX;
+            overflow-y: auto;
+            font-size: 1.5em;
+            .table {
+                .table_th {
+                position: sticky;
+                top: 0;
+                }
+                .table_content {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &.actions {
+                    .btn {
+                    width: 60px;
+                    font-size: 10px;
+                    margin-right: 2px;
+                    font-weight: 900;
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                    }
+                }
+                }
+            }
+        }
+        .detailPop {
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999999999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(black, 0.7);
+            opacity: 0;
+            visibility: hidden;
+            transform: all 0.5s;
+            .detailPop-contents {
+                width: 1024px;
+                height: 800px;
+                border-radius: 5px;
+                border: 3px solid #A6BED0;
+                background-color: white;
+                overflow-y: auto;
+            }
+            &.show {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        .footerNavbar {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            margin-top: 1em;
+            font-weight: 900;
+            position: absolute;
+            bottom: 0;
+        }
+    }
+}

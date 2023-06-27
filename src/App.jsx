@@ -266,6 +266,20 @@ export default function App() {
           element: LazyLoad(() =>
             import("./pages/session12/TaskTrackers/TaskTracker")
           )(),
+          detailsHomeWork: [
+            {
+              path: "add",
+              element: LazyLoad(() =>
+                import("./pages/session12/TaskTrackers/pages/Add")
+              )(),
+            },
+            {
+              path: "about",
+              element: LazyLoad(() =>
+                import("./pages/session12/TaskTrackers/pages/About")
+              )(),
+            },
+          ],
         },
       ],
       path: ROUTE_NAMES.SESSION_12.path,
@@ -318,7 +332,16 @@ export default function App() {
                           key={randomId()}
                           path={route.routePath}
                           element={route.element}
-                        />
+                        >
+                          {route.detailsHomeWork?.map((item) => (
+                            // session 12 có /task-tracker/add
+                            <Route
+                              key={randomId()}
+                              path={item.path}
+                              element={item.element}
+                            />
+                          ))}
+                        </Route>
                         {route.details?.map((item) => (
                           // session 8 có meoDetail
                           <Route
