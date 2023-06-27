@@ -285,6 +285,22 @@ export default function App() {
       path: ROUTE_NAMES.SESSION_12.path,
       element: LazyLoad(() => import("./pages/session12/Session12"))(),
     },
+    {
+      sessionNumber: 13,
+      sessionHomeWork: [
+        {
+          name: t("Redux Toolkit"),
+          path:
+            ROUTE_NAMES.SESSION_13.path + ROUTE_NAMES.SESSION_13.REDUX_TOOLKIT,
+          routePath: ROUTE_NAMES.SESSION_13.REDUX_TOOLKIT.slice(1),
+          element: LazyLoad(() =>
+            import("./pages/session13/ReduxToolkits/ReduxToolkit")
+          )(),
+        },
+      ],
+      path: ROUTE_NAMES.SESSION_13.path,
+      element: LazyLoad(() => import("./pages/session13/Session13"))(),
+    },
   ];
 
   function getMode() {

@@ -60,4 +60,8 @@ export default {
         path: "/session-12",
         TASK_TRACKER: "/task-tracker"
     },
+    SESSION_13: {
+        path: "/session-13",
+        REDUX_TOOLKIT: "/redux-toolkit"
+    },
 };
