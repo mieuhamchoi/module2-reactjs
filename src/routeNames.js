@@ -56,4 +56,8 @@ export default {
         TEST_JSON_SERVER: "/test-json-server",
         AXIOS: "/axios",
     },
+    SESSION_12: {
+        path: "/session-12",
+        TASK_TRACKER: "/task-tracker"
+    },
 };

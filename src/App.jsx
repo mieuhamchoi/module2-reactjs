@@ -255,6 +255,22 @@ export default function App() {
       path: ROUTE_NAMES.SESSION11.path,
       element: LazyLoad(() => import("./pages/session11/Session11"))(),
     },
+    {
+      sessionNumber: 12,
+      sessionHomeWork: [
+        {
+          name: t("Task Tracker"),
+          path:
+            ROUTE_NAMES.SESSION_12.path + ROUTE_NAMES.SESSION_12.TASK_TRACKER,
+          routePath: ROUTE_NAMES.SESSION_12.TASK_TRACKER.slice(1),
+          element: LazyLoad(() =>
+            import("./pages/session12/TaskTrackers/TaskTracker")
+          )(),
+        },
+      ],
+      path: ROUTE_NAMES.SESSION_12.path,
+      element: LazyLoad(() => import("./pages/session12/Session12"))(),
+    },
   ];
 
   function getMode() {
