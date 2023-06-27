@@ -18,6 +18,12 @@ Mutilple Language (i18next): `https://react.i18next.com/getting-started`
 
 Redux, React Redux: `https://viblo.asia/p/hoc-react-redux-trong-15-phut-1Je5E7q0ZnL`
 
+Redux toolkit: `https://redux-toolkit.js.org/introduction/getting-started`
+
+MeoMeo JS: `https://www.npmjs.com/package/@mieuteacher/meomeojs/v/1.0.5`
+
+JoditEditor: `https://www.npmjs.com/package/jodit-react/v/2.0.1-beta.6`
+
 ## Require
 
 Node JS 14+
