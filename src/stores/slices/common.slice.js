@@ -5,7 +5,10 @@ const commonSlice = createSlice(
         name: "count",
         initialState: {reload: false},
         reducers: {
-            reload: (state, action) => state = !state,
+            reload: (state, action) => {
+                console.log("state", state)
+                return {...state, reload: !state.reload}
+            },
         }
     }
 )

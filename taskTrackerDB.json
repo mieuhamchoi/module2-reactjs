@@ -7,38 +7,6 @@
       "endWorkTime": "2023-07-05T06:21:18.817Z",
       "setReminder": true,
       "id": 9
-    },
-    {
-      "name": "Thử nghiệm",
-      "des": "<iframe width=\"400\" height=\"345\" src=\"https://www.youtube.com/embed/Lk1XG0jx1VU\" frameborder=\"0\" allowfullscreen=\"\"></iframe><p><img src=\"https://i.pinimg.com/236x/5d/d7/c3/5dd7c360945e4b4d89bd9fc08b6e5e9c.jpg\" alt=\"\" width=\"300px\">&nbsp;adadasdasd&nbsp;<br>asdadadasd&nbsp; &nbsp;</p>",
-      "startWorkTime": "2023-06-07T06:45:40.282Z",
-      "endWorkTime": "2023-07-05T06:45:40.282Z",
-      "setReminder": true,
-      "id": 10
-    },
-    {
-      "name": "adaasdasd",
-      "des": "<p><span style=\"background-color: rgb(255, 0, 0);\">saaddad<br>adad&nbsp; &nbsp; &nbsp; asdada&nbsp; &nbsp;adasda&nbsp; adasdada<br>adad&nbsp; &nbsp;adad</span></p>",
-      "startWorkTime": "2023-06-02T06:46:59.316Z",
-      "endWorkTime": "2023-06-23T06:46:59.316Z",
-      "setReminder": true,
-      "id": 11
-    },
-    {
-      "name": "Test Youtube",
-      "des": "<iframe width=\"824px\" height=\"308px\" src=\"https://www.youtube.com/embed/Lk1XG0jx1VU\" frameborder=\"0\" allowfullscreen=\"\"></iframe>",
-      "startWorkTime": "2023-05-05T06:50:31.185Z",
-      "endWorkTime": "2023-05-31T06:50:31.185Z",
-      "setReminder": true,
-      "id": 12
-    },
-    {
-      "name": "Heo Con",
-      "des": "<p>adadad&nbsp;</p><iframe width=\"400px\" height=\"345px\" src=\"https://www.youtube.com/embed/Lk1XG0jx1VU\" frameborder=\"0\" allowfullscreen=\"\"></iframe>",
-      "startWorkTime": "2023-06-01T07:09:19.591Z",
-      "endWorkTime": "2023-06-27T07:09:19.591Z",
-      "setReminder": true,
-      "id": 13
     }
   ]
 }

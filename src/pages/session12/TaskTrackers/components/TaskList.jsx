@@ -4,6 +4,7 @@ import axios from 'axios'
 import moment from 'moment'
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
+import {commonActions} from '../../../../stores/slices/common.slice'
 export default function TaskList() {
   const dispatch = useDispatch()
     const commonStore = useSelector(store => store.commonStore)
@@ -25,9 +26,8 @@ export default function TaskList() {
     const handleDeleteTask = (taskId) => {
       axios.delete("http://localhost:3000/tasks/" + taskId)
       .then(res => {
-        dispatch({
-          type: "RELOAD"
-        })
+        console.log("adadasdas", commonActions)
+        dispatch(commonActions.reload())
       })
     }
 
