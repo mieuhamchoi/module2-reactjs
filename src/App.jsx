@@ -6,9 +6,10 @@ import LazyLoad from "./LazyLoad";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import PageConfig from "./components/PageConfig";
-import { store } from "./stores-redux/index.store";
+//import { store } from "./stores-redux/index.store";
 import { Provider } from "react-redux";
 import { randomId } from "@mieuteacher/meomeojs";
+import store from './stores/index.store';
 export default function App() {
   const { t } = useTranslation();
 
