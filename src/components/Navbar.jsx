@@ -73,10 +73,10 @@ export default function Navbar(props) {
               setOpenMenu(true);
               setMenuColor(menuColor);
             }}
-            onMouseLeave={() => {
-              setOpenMenu(false);
-              setMenuColor(menuColor);
-            }}
+            // onMouseLeave={() => {
+            //   setOpenMenu(false);
+            //   setMenuColor(menuColor);
+            // }}
             className="logo_menu_btn"
           >
             <div onClick={() => setOpenMenu(false)}>
