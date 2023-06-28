@@ -298,6 +298,15 @@ export default function App() {
             import("./pages/session13/ReduxToolkits/ReduxToolkit")
           )(),
         },
+        {
+          name: t("Redux Tool Mini Example"),
+          path:
+            ROUTE_NAMES.SESSION_13.path + ROUTE_NAMES.SESSION_13.REDUX_MINI_EXAMPLE,
+          routePath: ROUTE_NAMES.SESSION_13.REDUX_MINI_EXAMPLE.slice(1),
+          element: LazyLoad(() =>
+            import("./pages/session13/ReduxMiniExamples/ReduxMiniExample")
+          )(),
+        },
       ],
       path: ROUTE_NAMES.SESSION_13.path,
       element: LazyLoad(() => import("./pages/session13/Session13"))(),

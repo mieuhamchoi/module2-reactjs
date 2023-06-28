@@ -62,6 +62,7 @@ export default {
     },
     SESSION_13: {
         path: "/session-13",
-        REDUX_TOOLKIT: "/redux-toolkit"
+        REDUX_TOOLKIT: "/redux-toolkit",
+        REDUX_MINI_EXAMPLE: "/redux-mini-example"
     },
 };
