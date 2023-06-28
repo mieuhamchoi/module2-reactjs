@@ -2,10 +2,14 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { randomId, convertToVND } from "@mieuteacher/meomeojs";
 import { useDispatch } from "react-redux";
+import {ss10SCActions} from '../../../../stores/slices/ss10SC.slice'
+import {ss10PoductActions} from '../../../../stores/slices/ss10Products.slice'
+
 export default function ShoppingCartCom() {
   const productStore = useSelector((store) => store.ss10ProductStore);
-  const shoppingCartStore = useSelector((store) => store.ss10ShoppingCartStore);
+  const shoppingCartStore = useSelector((store) => store.ss10SCStore);
   const dispatch = useDispatch();
+
   function getProductInfo(productId) {
     return productStore.find((product) => product.id == productId);
   }
@@ -99,34 +103,22 @@ export default function ShoppingCartCom() {
                             ).value
                           );
                           if (!quantity) {
-                            dispatch({
-                              type: "DELETE_ITEM_IN_CART",
-                              payload: item.productId,
-                            });
-                            dispatch({
-                              type: "UPDATE_STOCK_PRODUCT",
-                              payload: {
-                                productId: item.productId,
-                                quantity: item.quantity,
-                                type: true,
-                              },
-                            });
+                            dispatch(ss10SCActions.deleteItemInCart(item.productId));
+                            dispatch(ss10PoductActions.updateStockProduct({
+                              productId: item.productId,
+                              quantity: item.quantity,
+                              type: true,
+                            }));
                           } else {
-                            dispatch({
-                              type: "UPDATE_ITEM_IN_CART",
-                              payload: {
-                                productId: item.productId,
-                                quantity: quantity,
-                              },
-                            });
-                            dispatch({
-                              type: "UPDATE_STOCK_PRODUCT",
-                              payload: {
-                                productId: item.productId,
-                                quantity: item.quantity - quantity,
-                                type: true,
-                              },
-                            });
+                            dispatch(ss10SCActions.updateItemInCart({
+                              productId: item.productId,
+                              quantity: quantity,
+                            }));
+                            dispatch(ss10PoductActions.updateStockProduct({
+                              productId: item.productId,
+                              quantity: item.quantity - quantity,
+                              type: true,
+                            }));
                           }
                         }}
                         type="button"
@@ -136,18 +128,12 @@ export default function ShoppingCartCom() {
                       </button>
                       <button
                         onClick={() => {
-                          dispatch({
-                            type: "DELETE_ITEM_IN_CART",
-                            payload: item.productId,
-                          });
-                          dispatch({
-                            type: "UPDATE_STOCK_PRODUCT",
-                            payload: {
-                              productId: item.productId,
-                              quantity: item.quantity,
-                              type: true,
-                            },
-                          });
+                          dispatch(ss10SCActions.deleteItemInCart(item.productId));
+                          dispatch(ss10PoductActions.updateStockProduct({
+                            productId: item.productId,
+                            quantity: item.quantity,
+                            type: true,
+                          }));
                         }}
                         type="button"
                         className="btn btn-danger"

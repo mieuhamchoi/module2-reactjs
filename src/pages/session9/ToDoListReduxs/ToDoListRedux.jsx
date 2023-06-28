@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
-  addNewDo,
-  deleteDo,
-  updateDo,
-} from "../../../stores-redux/toDoListStores/toDoList.action";
+  toDoListActions
+} from "../../../stores/slices/toDoList.slice";
 
 import "../../session6/todolists/Todolist.scss";
 import Content from "./components/Content";
@@ -43,8 +41,8 @@ export default function ToDoListRedux() {
                 </h3>
                 <EditTool
                   dispatch={dispatch}
-                  addNewDo={addNewDo}
-                  updateDo={updateDo}
+                  addNewDo={toDoListActions.addNewDo}
+                  updateDo={toDoListActions.updateDo}
                   isEditForm={isEditForm}
                   setIsEditForm={setIsEditForm}
                 ></EditTool>
@@ -55,8 +53,8 @@ export default function ToDoListRedux() {
                 <Content
                   doList={toDoListStore}
                   dispatch={dispatch}
-                  deleteDo={deleteDo}
-                  updateDo={updateDo}
+                  deleteDo={toDoListActions.deleteDo}
+                  updateDo={toDoListActions.updateDo}
                   setDataEdit={setDataEdit}
                 ></Content>
                 {/* Tabs content */}

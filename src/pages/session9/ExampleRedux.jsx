@@ -1,20 +1,17 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  incrementCount,
-  decrementCount,
-} from "../../stores-redux/countStores/count.action";
+import {countActions} from '../../stores/slices/count.slice'
 
 export default function ExampleRedux() {
   const countStore = useSelector((state) => state.countStore); // Lấy giá trị count từ store
   const dispatch = useDispatch();
   return (
     <>
-      <p>Count: {countStore.count}</p>
+      <p>Count: {countStore}</p>
       <br></br>
       <button
         onClick={() => {
-          dispatch(incrementCount());
+          dispatch(countActions.increment());
         }}
       >
         incrementCount
@@ -22,7 +19,7 @@ export default function ExampleRedux() {
       <br></br>
       <button
         onClick={() => {
-          dispatch(decrementCount());
+          dispatch(countActions.decrement());
         }}
       >
         decrementCount

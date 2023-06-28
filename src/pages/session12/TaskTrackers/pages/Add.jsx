@@ -4,7 +4,7 @@ import JoditEditor from 'jodit-react';
 
 import { DatePicker, Checkbox } from 'antd';
 import { useDispatch } from 'react-redux';
-
+import {commonActions} from '../../../../stores/slices/common.slice'
 
 const { RangePicker } = DatePicker;
 
@@ -72,9 +72,8 @@ export default function Add() {
       setChecked(false);
       setTaskNameValue("");
       setContent("");
-      dispatch({
-        type: "RELOAD"
-      })
+
+      dispatch(commonActions.reload())
     })
     .catch(er => {
       console.log("gặp lỗi", er)

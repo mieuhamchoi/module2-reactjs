@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { message, Modal } from "antd";
 
 export default function Content(props) {
@@ -26,7 +26,8 @@ export default function Content(props) {
         </span>
         <ul className="list-group mb-0">
           {props.doList
-            .sort((a, b) => a.did - b.did)
+            .slice() // Clone the array
+            .sort((a, b) =>  a.did - b.did)
             .map((item) => (
               <li
                 className="list-group-item d-flex align-items-center border-0 mb-2 rounded justify-content-between"

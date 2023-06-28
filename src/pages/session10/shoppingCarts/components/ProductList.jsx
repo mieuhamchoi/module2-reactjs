@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { convertToVND, randomId } from "@mieuteacher/meomeojs";
 import { useSelector, useDispatch } from "react-redux";
+import {ss10SCActions} from '../../../../stores/slices/ss10SC.slice'
+import {ss10PoductActions} from '../../../../stores/slices/ss10Products.slice'
 
 export default function ProductList() {
   const productStore = useSelector((store) => store.ss10ProductStore);
@@ -8,21 +10,17 @@ export default function ProductList() {
 
   function formSubmit(event, productId) {
     event.preventDefault();
-    dispatch({
-      type: "ADD_TO_CART",
-      payload: {
-        productId: productId,
-        quantity: Number(event.target.quantity.value),
-      },
-    });
-    dispatch({
-      type: "UPDATE_STOCK_PRODUCT",
-      payload: {
-        productId: productId,
-        quantity: Number(event.target.quantity.value),
-        type: false,
-      },
-    });
+
+    dispatch(ss10SCActions.addItemToCart({
+      productId: productId,
+      quantity: Number(event.target.quantity.value),
+    }));
+
+    dispatch(ss10PoductActions.updateStockProduct({
+      productId: productId,
+      quantity: Number(event.target.quantity.value),
+      type: false,
+    }));
   }
   return (
     <div className="listProduct">
