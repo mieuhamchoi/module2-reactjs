@@ -1,22 +1,28 @@
 {
-    "doLists": [
-        {
-            "id": 1,
-            "des": "Làm việc nhà",
-            "addTime": "1233",
-            "statusId": 1
-        }
-    ],
-    "doStatus": [
-        {
-            "id": 1,
-            "code": "C",
-            "name": "Compelete"
-        },
-        {
-            "id": 2,
-            "code": "IC",
-            "name": "Incompelete"
-        }
-    ]
+  "doList": [
+    {
+      "title": "Việc 1",
+      "statusId": "1",
+      "addTime": 1688020452292,
+      "remove": false,
+      "id": 1
+    },
+    {
+      "title": "Việc 2",
+      "statusId": "2",
+      "addTime": 1688020457208,
+      "remove": false,
+      "id": 2
+    }
+  ],
+  "doStatusList": [
+    {
+      "id": 1,
+      "title": "Compelete"
+    },
+    {
+      "id": 2,
+      "title": "Incompelete"
+    }
+  ]
 }

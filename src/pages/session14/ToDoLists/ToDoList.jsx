@@ -1,12 +1,29 @@
-import React, { useEffect } from 'react'
-import {commonActions} from '@stores/slices/common.slice.js'
+import React from 'react'
+
+import { useSelector } from 'react-redux'
+
+import Loading from '@Components/Loadings/Loading';
+
+import DoList from './components/DoList';
+
+import Tools from './components/Tools';
+
+import './ToDoList.scss';
 
 export default function TodoList() {
+  const doListStore = useSelector(store => store.doListStore)
 
-  useEffect(() => {
-    console.log("commonActions", commonActions)
-  }, [])
   return (
-    <div>todoList</div>
+    <>
+      {
+        doListStore.loading ? <Loading/> : <></>
+      }
+      <div className='doList_container'>
+          {/* Tools */}
+          <Tools/>
+          {/* DoList */}
+          <DoList />
+      </div>
+    </>
   )
 }

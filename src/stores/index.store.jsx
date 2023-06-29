@@ -7,6 +7,7 @@ import ss10ProductReducer from './slices/ss10Products.slice'
 import ss10SCReducer from './slices/ss10SC.slice'
 import commonReducer from './slices/common.slice'
 import miniReducer from './slices/mini.slice'
+import doListReducer from './slices/doList.slice'
 
 const store = configureStore({
     reducer: {
@@ -16,7 +17,8 @@ const store = configureStore({
         ss10ProductStore: ss10ProductReducer,
         ss10SCStore: ss10SCReducer,
         commonStore: commonReducer,
-        miniStore: miniReducer
+        miniStore: miniReducer,
+        doListStore: doListReducer
     },
 });
 
