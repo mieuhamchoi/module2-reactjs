@@ -81,7 +81,7 @@ export default function DoList() {
             </div>
             <div className='desTime'>
               <span style={{textDecoration: doItem.remove ? "line-through" : "none"}} className='desTime_des'>{doItem.title}</span>
-              <span className='desTime_time'>{doItem.addTime}</span>
+              <span className='desTime_time'>{getDateInfo(doItem.addTime).format}</span>
             </div>
             <div className='status'>{getStatusInfo(doItem.statusId).title} {doItem.remove ? "(Removed)" : ""}</div>
             <div className='tools'>

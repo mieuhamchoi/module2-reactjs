@@ -39,15 +39,64 @@
       "title": "Việc 5",
       "statusId": "3",
       "addTime": 1688022974752,
-      "remove": false,
+      "remove": true,
       "id": 7
     },
     {
       "title": "Viêc 6",
       "statusId": "4",
       "addTime": 1688022979637,
-      "remove": false,
+      "remove": true,
       "id": 8
+    },
+    {
+      "title": "Chào bạn ",
+      "statusId": "2",
+      "addTime": 1688025835506,
+      "remove": false,
+      "id": 9
+    },
+    {
+      "title": "Thứ 2",
+      "statusId": "2",
+      "addTime": 1688025983210,
+      "remove": true,
+      "id": 10
+    },
+    {
+      "title": "Chào bạn  2",
+      "statusId": "1",
+      "addTime": 1688026002182,
+      "remove": true,
+      "id": 11
+    },
+    {
+      "title": "Thứ 2",
+      "statusId": "1",
+      "addTime": 1688026100092,
+      "remove": false,
+      "id": 12
+    },
+    {
+      "title": "Thử 1",
+      "statusId": "4",
+      "addTime": 1688026109195,
+      "remove": false,
+      "id": 13
+    },
+    {
+      "title": "Thứ 2",
+      "statusId": "2",
+      "addTime": 1688026113145,
+      "remove": false,
+      "id": 14
+    },
+    {
+      "title": "VỪa thêm",
+      "statusId": "2",
+      "addTime": 1688026406007,
+      "remove": false,
+      "id": 15
     }
   ],
   "doStatusList": [

@@ -87,7 +87,7 @@ const doListSlice = createSlice(
           });
           builder.addCase(create.fulfilled, (state, action) => {
             state.loading = false;
-            state.doList.push(action.payload)
+            state.doList.unshift(action.payload)
             message.success('Đã tạo mới thành công!');
           });
           builder.addCase(create.rejected, (state, action) => {
@@ -148,7 +148,6 @@ const doListSlice = createSlice(
             state.loading = true;
           });
           builder.addCase(findFilter.fulfilled, (state, action) => {
-            console.log("action.payload.statusId",action.payload.statusId)
             state.loading = false;
             let temp = [...action.payload.data];
             action.payload.statusId == "" ?

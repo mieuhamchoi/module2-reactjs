@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import { useSelector } from 'react-redux'
 
@@ -12,7 +12,7 @@ import './ToDoList.scss';
 
 export default function TodoList() {
   const doListStore = useSelector(store => store.doListStore)
-
+  
   return (
     <>
       {
