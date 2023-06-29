@@ -1,18 +1,53 @@
 {
   "doList": [
     {
-      "title": "Việc 1",
-      "statusId": "1",
-      "addTime": 1688020452292,
-      "remove": false,
-      "id": 1
-    },
-    {
       "title": "Việc 2",
       "statusId": "2",
       "addTime": 1688020457208,
-      "remove": false,
+      "remove": true,
       "id": 2
+    },
+    {
+      "title": "Việc mới 1",
+      "statusId": "1",
+      "addTime": 1688021914128,
+      "remove": false,
+      "id": 3
+    },
+    {
+      "title": "Việc 5",
+      "statusId": "1",
+      "addTime": 1688021917900,
+      "remove": false,
+      "id": 4
+    },
+    {
+      "title": "Chào em nhé",
+      "statusId": "1",
+      "addTime": 1688021923788,
+      "remove": false,
+      "id": 5
+    },
+    {
+      "title": "ADAS",
+      "statusId": "1",
+      "addTime": 1688022070647,
+      "remove": false,
+      "id": 6
+    },
+    {
+      "title": "Việc 5",
+      "statusId": "3",
+      "addTime": 1688022974752,
+      "remove": false,
+      "id": 7
+    },
+    {
+      "title": "Viêc 6",
+      "statusId": "4",
+      "addTime": 1688022979637,
+      "remove": false,
+      "id": 8
     }
   ],
   "doStatusList": [
@@ -23,6 +58,14 @@
     {
       "id": 2,
       "title": "Incompelete"
+    },
+    {
+      "id": 3,
+      "title": "Doing"
+    },
+    {
+      "id": 4,
+      "title": "Almost Done"
     }
   ]
 }

@@ -35,6 +35,9 @@ export default function DoList() {
   const [showForm, setShowForm] = useState(false);
   const [preInfo, setPreInfo] = useState(null);
 
+  function getStatusInfo(statusId) {
+    return doStatusList.find(status => status.id == statusId);
+  }
   return (
     <div className='doList'>
       {showForm ? <Form dataObj={
@@ -59,6 +62,17 @@ export default function DoList() {
               {/* nut check */}
             <div className="form-check">
               <input
+                defaultChecked={doItem.remove}
+                onChange={(e) => {
+                  dispatch(doListActions.updatePatch(
+                    {
+                      doId: doItem.id,
+                      patchData: {
+                        remove: e.target.checked
+                      }
+                    }
+                  ))
+                }}
                 className="form-check-input"
                 type="checkbox"
                 defaultValue=""
@@ -66,9 +80,10 @@ export default function DoList() {
               />
             </div>
             <div className='desTime'>
-              <span className='desTime_des'>{doItem.title}</span>
+              <span style={{textDecoration: doItem.remove ? "line-through" : "none"}} className='desTime_des'>{doItem.title}</span>
               <span className='desTime_time'>{doItem.addTime}</span>
             </div>
+            <div className='status'>{getStatusInfo(doItem.statusId).title} {doItem.remove ? "(Removed)" : ""}</div>
             <div className='tools'>
                 <div onClick={() => {
                   dispatch(doListActions.deleteDo(doItem.id))

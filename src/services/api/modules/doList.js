@@ -12,5 +12,8 @@ export default {
     },
     update: async (doId, doEdited) => {
         return await axios.put(process.env.REACT_APP_JSON_HOST + "/doList/" +  doId, doEdited);
+    },
+    updatePatch: async (doId, patchData) => {
+        return await axios.patch(process.env.REACT_APP_JSON_HOST + "/doList/" +  doId, patchData);
     }
 }

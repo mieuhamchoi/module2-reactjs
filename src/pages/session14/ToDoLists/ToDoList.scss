@@ -33,8 +33,7 @@
                 .dropdown-item {
                     color: white;
                     &:hover {
-                        background-color: white;
-                        color: black;
+                        background-color: blue;
                     }
                 }
             }
@@ -112,6 +111,11 @@
                 .tool-edit {
 
                 }
+            }
+            .status {
+                position: absolute;
+                left: 50%;
+                font-weight: 700;
             }
             &:last-child {
                 margin-bottom: 0;

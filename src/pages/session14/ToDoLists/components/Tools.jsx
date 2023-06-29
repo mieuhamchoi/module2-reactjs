@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import {doListActions} from '@stores/slices/doList.slice.js'
 import { useState } from 'react';
 import Form from './Form';
+import { randomId } from '@mieuteacher/meomeojs';
 
 export default function Tools() {
   const dispatch = useDispatch();
@@ -43,7 +44,7 @@ export default function Tools() {
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            Filter
+            Select Fillter
           </a>
 
           <ul className="dropdown-menu">
@@ -55,22 +56,19 @@ export default function Tools() {
               >
                 <span className="dropdown-item">All</span>
               </li>
-              <li
-                style={{ cursor: "pointer" }}
-                onClick={() => {
-                  dispatch(doListActions.findFilter(2))
-                }}
-              >
-                <span className="dropdown-item">Incompelete</span>
-              </li>
-              <li
-                style={{ cursor: "pointer" }}
-                onClick={() => {
-                  dispatch(doListActions.findFilter(1))
-                }}
-              >
-                <span className="dropdown-item">Compelete</span>
-              </li>
+            {
+              doStatusList.map((doStatus) => 
+                <li
+                  key={randomId()}
+                  style={{ cursor: "pointer" }}
+                  onClick={() => {
+                    dispatch(doListActions.findFilter(doStatus.id))
+                  }}
+                >
+                  <span className="dropdown-item">{doStatus.title}</span>
+                </li>
+              )
+            }
           </ul>
         </div>
       </div>

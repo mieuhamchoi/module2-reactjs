@@ -35,6 +35,14 @@ const update = createAsyncThunk(  // find all do list
     }
 );
 
+const updatePatch = createAsyncThunk(  // find all do list
+    "updatePatch",
+    async ({doId, patchData}) => {
+        const res = await api.doList.updatePatch(doId,patchData);
+        return res.data
+    }
+);
+
 const findFilter = createAsyncThunk(  // find all do list
     "findFilter",
     async (statusId) => {
@@ -117,16 +125,35 @@ const doListSlice = createSlice(
             state.loading = false;
             message.error('Đã có lỗi xảy ra');
           });
+            // update patch do
+          builder.addCase(updatePatch.pending, (state, action) => {
+            state.loading = true;
+          });
+          builder.addCase(updatePatch.fulfilled, (state, action) => {
+            state.loading = false;
+            state.doList = state.doList.map(doItem => {
+              if (doItem.id == action.payload.id) {
+                return action.payload
+              }
+              return doItem
+            })
+            message.success('Cập nhật thành công!');
+          });
+          builder.addCase(updatePatch.rejected, (state, action) => {
+            state.loading = false;
+            message.error('Đã có lỗi xảy ra');
+          });
             // filter do
           builder.addCase(findFilter.pending, (state, action) => {
             state.loading = true;
           });
           builder.addCase(findFilter.fulfilled, (state, action) => {
+            console.log("action.payload.statusId",action.payload.statusId)
             state.loading = false;
             let temp = [...action.payload.data];
             action.payload.statusId == "" ?
             state.doList = temp :
-            state.doList = temp.filter((item) => item.statusId != action.payload.statusId)
+            state.doList = temp.filter((item) => item.statusId == action.payload.statusId)
           });
           builder.addCase(findFilter.rejected, (state, action) => {
             state.loading = false;
@@ -156,7 +183,8 @@ export const doListActions = {
     create,
     deleteDo,
     update,
-    findFilter
+    findFilter,
+    updatePatch
 }
 
 
