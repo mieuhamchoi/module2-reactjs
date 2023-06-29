@@ -1,0 +1,22 @@
+{
+    "doLists": [
+        {
+            "id": 1,
+            "des": "Làm việc nhà",
+            "addTime": "1233",
+            "statusId": 1
+        }
+    ],
+    "doStatus": [
+        {
+            "id": 1,
+            "code": "C",
+            "name": "Compelete"
+        },
+        {
+            "id": 2,
+            "code": "IC",
+            "name": "Incompelete"
+        }
+    ]
+}

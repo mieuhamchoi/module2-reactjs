@@ -24,6 +24,8 @@ MeoMeo JS: `https://www.npmjs.com/package/@mieuteacher/meomeojs/v/1.0.5`
 
 JoditEditor: `https://www.npmjs.com/package/jodit-react/v/2.0.1-beta.6`
 
+Alias Craco: `https://www.npmjs.com/package/@craco/craco/v/7.1.0`
+
 ## Require
 
 Node JS 14+
