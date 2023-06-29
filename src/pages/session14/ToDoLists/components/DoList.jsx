@@ -57,7 +57,7 @@ export default function DoList() {
         doList.length == 0 ? <div className='noti'>NO TO DO</div> : <></>
       }
       {
-        doList.map((doItem) => 
+        doList.slice().sort((a,b) => a.remove - b.remove).map((doItem) => 
           <div key={randomId()} className='doCard'>
               {/* nut check */}
             <div className="form-check">

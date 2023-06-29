@@ -11,28 +11,28 @@
       "title": "Việc mới 1",
       "statusId": "1",
       "addTime": 1688021914128,
-      "remove": false,
+      "remove": true,
       "id": 3
     },
     {
       "title": "Việc 5",
       "statusId": "1",
       "addTime": 1688021917900,
-      "remove": false,
+      "remove": true,
       "id": 4
     },
     {
       "title": "Chào em nhé",
       "statusId": "1",
       "addTime": 1688021923788,
-      "remove": false,
+      "remove": true,
       "id": 5
     },
     {
       "title": "ADAS",
       "statusId": "1",
       "addTime": 1688022070647,
-      "remove": false,
+      "remove": true,
       "id": 6
     },
     {
