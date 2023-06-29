@@ -65,4 +65,8 @@ export default {
         REDUX_TOOLKIT: "/redux-toolkit",
         REDUX_MINI_EXAMPLE: "/redux-mini-example"
     },
+    SESSION_14: {
+        path: "/session-14",
+        TO_DO_LIST: "/to-do-list",
+    },
 };

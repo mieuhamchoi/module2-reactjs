@@ -311,6 +311,22 @@ export default function App() {
       path: ROUTE_NAMES.SESSION_13.path,
       element: LazyLoad(() => import("./pages/session13/Session13"))(),
     },
+    {
+      sessionNumber: 14,
+      sessionHomeWork: [
+        {
+          name: t("To Do List"),
+          path:
+            ROUTE_NAMES.SESSION_14.path + ROUTE_NAMES.SESSION_14.TO_DO_LIST,
+          routePath: ROUTE_NAMES.SESSION_14.TO_DO_LIST.slice(1),
+          element: LazyLoad(() =>
+            import("./pages/session14/ToDoLists/ToDoList")
+          )(),
+        },
+      ],
+      path: ROUTE_NAMES.SESSION_14.path,
+      element: LazyLoad(() => import("./pages/session14/Session14"))(),
+    },
   ];
 
   function getMode() {
